@@ -33,6 +33,17 @@ for i, p in enumerate(d.get("perks", [])):
 for sec in ["news", "perks"]:
     for i, x in enumerate(d.get(sec, [])):
         if x.get("credibility") not in CRED: errs.append(f"{sec}[{i}]: credibility 只能是 official/first/media")
+# 可选新字段：stars_rec(1-5 整数) / tags(字符串数组)，旧期没有也能通过
+TAGS = {"简历","求职","智能体","自动化","知识库","模型","安全","福利","工具","研究"}
+items = [("try", d["try"])] if d.get("try") else []
+items += [(f"{k}[{i}]", x) for k in ("news", "repos", "perks") for i, x in enumerate(d.get(k, []))]
+for where, x in items:
+    if "stars_rec" in x and x["stars_rec"] not in (1, 2, 3, 4, 5): errs.append(f"{where}: stars_rec 必须是 1-5 的整数")
+    if "tags" in x:
+        if not isinstance(x["tags"], list): errs.append(f"{where}: tags 必须是数组")
+        else:
+            bad = [t for t in x["tags"] if t not in TAGS]
+            if bad: errs.append(f"{where}: 未知标签 {bad}，可选 {sorted(TAGS)}")
 # 与往期去重
 for f in glob.glob(os.path.join(ROOT, "*.json")):
     n = os.path.basename(f)

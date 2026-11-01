@@ -9,13 +9,19 @@
   "title": "把你的简历一键转成 AI 好读的 Markdown，再让 AI 帮你对着岗位改",
   "plain": "这是微软开源的小工具 MarkItDown，能把 PDF/Word 简历转成纯文本格式（Markdown，一种带标题和列表的简单文本）。和你的关系：做简历优化服务时，先把客户简历转成干净文本，AI 改起来更准、更省事。",
   "steps": [
-   "电脑装好 Python 后，在终端（命令行窗口）输入：pip install 'markitdown[all]'",
-   "输入：markitdown 我的简历.pdf -o resume.md，得到 resume.md 文件",
+   "电脑装好 Python 后，在终端（命令行窗口）输入：`pip install 'markitdown[all]'`",
+   "输入 `markitdown 我的简历.pdf -o resume.md`，得到 resume.md 文件",
    "把 resume.md 的内容和目标岗位描述一起贴给 ChatGPT 或 Claude，让它“只用我简历里的事实，按这个岗位改写要点”"
   ],
   "why": "简历优化最费时间的是整理格式，这一步交给工具，你只管内容；全程免费、在自己电脑上跑。",
   "url": "https://github.com/microsoft/markitdown",
-  "credibility": "first"
+  "credibility": "first",
+  "stars_rec": 5,
+  "tags": [
+   "简历",
+   "求职",
+   "知识库"
+  ]
  },
  "news": [
   {
@@ -25,7 +31,11 @@
    "source_name": "@claudeai",
    "url": "https://x.com/claudeai/status/2116220869479428500",
    "published": "10月31日 01:29（北京时间）",
-   "credibility": "official"
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "模型"
+   ]
   },
   {
    "title": "OpenAI Agents API 本周更新：自动审查命令、后台压缩上下文等",
@@ -34,7 +44,12 @@
    "source_name": "@OpenAIDevs",
    "url": "https://x.com/OpenAIDevs/status/2116306164375863343",
    "published": "10月31日 07:08（北京时间）",
-   "credibility": "official"
+   "credibility": "official",
+   "stars_rec": 5,
+   "tags": [
+    "智能体",
+    "自动化"
+   ]
   },
   {
    "title": "Anthropic 用数千个 Claude 智能体自动做安全测试研究",
@@ -43,7 +58,12 @@
    "source_name": "@AnthropicAI",
    "url": "https://x.com/AnthropicAI/status/2116349211549843666",
    "published": "10月31日 09:59（北京时间）",
-   "credibility": "official"
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "智能体",
+    "安全"
+   ]
   },
   {
    "title": "OpenAI 推出 Private Intelligence，给企业更强的数据控制",
@@ -52,7 +72,11 @@
    "source_name": "@OpenAI",
    "url": "https://openai.com/business/private-intelligence/",
    "published": "10月30日 23:12（北京时间）",
-   "credibility": "official"
+   "credibility": "official",
+   "stars_rec": 2,
+   "tags": [
+    "安全"
+   ]
   },
   {
    "title": "Google DeepMind 用 Gemini 帮英国政府审批建房申请",
@@ -61,7 +85,11 @@
    "source_name": "@GoogleDeepMind",
    "url": "https://x.com/GoogleDeepMind/status/2116524000977285321",
    "published": "10月31日 21:33（北京时间）",
-   "credibility": "official"
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "自动化"
+   ]
   }
  ],
  "repos": [
@@ -77,7 +105,11 @@
    "stars": 6077,
    "updated": "2026-10-27",
    "created": "2026-10-09",
-   "stats_checked": "2026-11-01"
+   "stats_checked": "2026-11-01",
+   "stars_rec": 4,
+   "tags": [
+    "知识库"
+   ]
   },
   {
    "repo": "deepseek-ai/dsh-superagent-prototype",
@@ -91,13 +123,18 @@
    "stars": 5795,
    "updated": "2026-10-31",
    "created": "2026-10-31",
-   "stats_checked": "2026-11-01"
+   "stats_checked": "2026-11-01",
+   "stars_rec": 3,
+   "tags": [
+    "智能体",
+    "自动化"
+   ]
   },
   {
    "repo": "microsoft/markitdown",
    "category": "classic",
    "what": "微软开源的格式转换工具，把 PDF、Word、Excel、PPT 等转成 AI 好读的 Markdown 文本。",
-   "how": "第一步：终端输入 pip install 'markitdown[all]'，然后 markitdown 文件名.pdf -o 输出.md。",
+   "how": "第一步：终端输入 `pip install 'markitdown[all]'`，然后 `markitdown 文件名.pdf -o 输出.md`。",
    "difficulty": "简单",
    "why": "近 20 万 Star 的老牌工具，仍在持续更新；简历优化和知识库整理的第一步。",
    "credibility": "first",
@@ -105,13 +142,18 @@
    "stars": 193342,
    "updated": "2026-10-28",
    "created": "2024-11-14",
-   "stats_checked": "2026-11-01"
+   "stats_checked": "2026-11-01",
+   "stars_rec": 5,
+   "tags": [
+    "简历",
+    "知识库"
+   ]
   },
   {
    "repo": "n8n-io/n8n",
    "category": "classic",
    "what": "拖拽式的工作流自动化平台（类似“如果收到邮件就自动做某事”），内置 AI 功能。",
-   "how": "第一步：装好 Node.js 后在终端输入 npx n8n，浏览器打开 http://localhost:5678 就能开始拖第一个流程。",
+   "how": "第一步：装好 Node.js 后在终端输入 `npx n8n`，浏览器打开 http://localhost:5678 就能开始拖第一个流程。",
    "difficulty": "一般",
    "why": "20 万+ Star、今天还在更新，是接 AI 自动化单子最常用的工具之一。注意它是“fair-code”许可，商用前看一下许可条款。",
    "credibility": "first",
@@ -119,7 +161,12 @@
    "stars": 209267,
    "updated": "2026-11-01",
    "created": "2019-06-22",
-   "stats_checked": "2026-11-01"
+   "stats_checked": "2026-11-01",
+   "stars_rec": 5,
+   "tags": [
+    "自动化",
+    "智能体"
+   ]
   },
   {
    "repo": "AienTech/dossier",
@@ -133,7 +180,12 @@
    "stars": 3650,
    "updated": "2026-11-01",
    "created": "2026-10-04",
-   "stats_checked": "2026-11-01"
+   "stats_checked": "2026-11-01",
+   "stars_rec": 5,
+   "tags": [
+    "简历",
+    "求职"
+   ]
   }
  ],
  "perks": [
@@ -146,7 +198,11 @@
    "card": "要，需绑定可用的支付方式",
    "auto_renew": "会，12 个月后按当地标准月费自动扣费，需提前取消",
    "url": "https://one.google.com/offer/studentoffer8",
-   "credibility": "official"
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "福利"
+   ]
   },
   {
    "title": "Azure for Students：100 美元额度，免绑卡",
@@ -157,7 +213,12 @@
    "card": "不需要",
    "auto_renew": "不会；额度用完会邮件询问是否转按量付费，不转就停用",
    "url": "https://azure.microsoft.com/en-us/free/students",
-   "credibility": "official"
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "福利",
+    "自动化"
+   ]
   },
   {
    "title": "OpenAI Codex 学生额度：100 美元",
@@ -168,7 +229,11 @@
    "card": "官方未说明",
    "auto_renew": "官方未说明（是一次性额度）",
    "url": "https://developers.openai.com/community/students",
-   "credibility": "official"
+   "credibility": "official",
+   "stars_rec": 2,
+   "tags": [
+    "福利"
+   ]
   }
  ],
  "note": "今日说明：@xai 账号目前 0 粉丝、0 帖、简介写“Now at @SpaceXAI”，无法核实为官方信息源，本期未引用；其余 12 个指定账号均已核对为认证账号。周末官方动态较少，GitHub Trending 和 Hacker News 首页今日没有更贴合的 AI 要闻。"

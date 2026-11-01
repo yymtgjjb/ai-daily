@@ -35,21 +35,27 @@
 - 可信度：`official` 官方（公司官方账号/博客/官方仓库）；`first` 一手（项目作者本人的仓库或帖子、论文原文）；`media` 媒体（新闻报道、HN 讨论）。
 - 时间一律写北京时间，如「10月31日 07:08（北京时间）」。X/API 时间是 UTC，要 +8 小时。
 
+## 推荐指数与方向标签（v2 起每天都要填；字段可选，旧期没有也兼容）
+- `stars_rec`：1–5 的整数，填在 try / news / repos / perks 每条上。5=和读者（简历优化、求职、AI 自动化）直接相关且今天就能用；4=很相关；3=值得了解；2=背景信息；1=一般。不要人人 5 星。
+- `tags`：数组，只能从这些里选：简历、求职、智能体、自动化、知识库、模型、安全、福利、工具、研究。页面顶部的筛选栏靠它过滤（「我的方向」= 简历/求职/智能体/自动化/知识库）。
+- 命令或代码在 `steps` / `how` 里用反引号包起来，例如 `` `npx n8n` ``，页面会显示成等宽字体浅底色块。
+- 图标：页面已固定在栏目标题和今日一句话上加图标，数据里不要再加 emoji。
+
 ## JSON 结构（`data/YYYY-MM-DD.json`）
 ```json
 {
   "date": "2026-11-01",
   "headline": {"text": "一句话", "url": "https://…", "credibility": "official"},
   "try": {"title": "…", "plain": "这是什么+和我的关系", "steps": ["第1步","第2步","第3步"],
-          "why": "推荐理由", "url": "https://…", "credibility": "first"},
+          "why": "推荐理由", "url": "https://…", "credibility": "first", "stars_rec": 5, "tags": ["简历","求职"]},
   "news": [{"title": "…", "plain": "…", "why": "…", "source_name": "@claudeai",
-            "url": "https://…", "published": "10月31日 01:29（北京时间）", "credibility": "official"}],
+            "url": "https://…", "published": "10月31日 01:29（北京时间）", "credibility": "official", "stars_rec": 4, "tags": ["模型"]}],
   "repos": [{"repo": "owner/name", "category": "new|classic|goal", "what": "一句话这是什么",
              "how": "一句话我怎么用（具体到第一步）", "difficulty": "简单|一般|较难", "why": "推荐理由",
-             "credibility": "first", "stars": 0, "updated": "YYYY-MM-DD", "created": "YYYY-MM-DD",
+             "credibility": "first", "stars_rec": 5, "tags": ["自动化"], "stars": 0, "updated": "YYYY-MM-DD", "created": "YYYY-MM-DD",
              "url": "https://github.com/owner/name", "stats_checked": "YYYY-MM-DD"}],
   "perks": [{"title": "…", "plain": "…", "why": "…", "who": "谁能领", "deadline": "截止时间",
-             "card": "是否绑卡", "auto_renew": "是否自动续费", "url": "官方链接", "credibility": "official"}],
+             "card": "是否绑卡", "auto_renew": "是否自动续费", "url": "官方链接", "credibility": "official", "stars_rec": 3, "tags": ["福利"]}],
   "note": "可选：本期说明，如哪些来源读不到、哪个账号无法核实"
 }
 ```
@@ -58,6 +64,7 @@
 `data/index.json`（由 validate.py 生成，勿手改）：`{"updated": "YYYY-MM-DD", "days": [{"date": "…", "headline": "…"}]}`，按日期倒序。
 
 ## 页面功能
+- 顶部筛选栏：全部 / 🎯 我的方向 / 简历·求职 / 智能体 / 自动化 / 知识库，另有「按推荐排序」；要闻和项目卡片可「展开详情」。
 - 默认显示最新一期；`?date=YYYY-MM-DD` 或 `#YYYY-MM-DD` 直达；顶部前一天/后一天/下拉选日期；「往期」列表；「我的收藏」（localStorage，只在用户浏览器）。
 - 页面里不放任何个人信息、密码或密钥。
 
