@@ -1,0 +1,175 @@
+{
+ "date": "2026-11-01",
+ "headline": {
+  "text": "Claude 把 Max 套餐改名（Max 5x→Max、Max 20x→Ultra），价格不变，并开始给已验证的 Ultra 账号取消“5 小时用量上限”。",
+  "url": "https://x.com/claudeai/status/2116220869479428500",
+  "credibility": "official"
+ },
+ "try": {
+  "title": "把你的简历一键转成 AI 好读的 Markdown，再让 AI 帮你对着岗位改",
+  "plain": "这是微软开源的小工具 MarkItDown，能把 PDF/Word 简历转成纯文本格式（Markdown，一种带标题和列表的简单文本）。和你的关系：做简历优化服务时，先把客户简历转成干净文本，AI 改起来更准、更省事。",
+  "steps": [
+   "电脑装好 Python 后，在终端（命令行窗口）输入：pip install 'markitdown[all]'",
+   "输入：markitdown 我的简历.pdf -o resume.md，得到 resume.md 文件",
+   "把 resume.md 的内容和目标岗位描述一起贴给 ChatGPT 或 Claude，让它“只用我简历里的事实，按这个岗位改写要点”"
+  ],
+  "why": "简历优化最费时间的是整理格式，这一步交给工具，你只管内容；全程免费、在自己电脑上跑。",
+  "url": "https://github.com/microsoft/markitdown",
+  "credibility": "first"
+ },
+ "news": [
+  {
+   "title": "Claude 套餐改名，Ultra 用户取消 5 小时上限",
+   "plain": "这是 Claude 付费档位的调整：Max 5x 改叫 Max（仍是每月 100 美元），Max 20x 改叫 Ultra（仍是 200 美元）。和你的关系：如果你用 Claude 做自动化，重度用户卡“5 小时上限”的情况会变少，但每周上限不变。",
+   "why": "官方账号发布，6 百多万次浏览，是近两天最受关注的 AI 消息；新账号需要验证后才取消限制。",
+   "source_name": "@claudeai",
+   "url": "https://x.com/claudeai/status/2116220869479428500",
+   "published": "10月31日 01:29（北京时间）",
+   "credibility": "official"
+  },
+  {
+   "title": "OpenAI Agents API 本周更新：自动审查命令、后台压缩上下文等",
+   "plain": "这是给开发者用的 AI 智能体接口（Agents API，让 AI 自己多步干活的接口）的一组新功能。和你的关系：做 AI 自动化时，智能体执行命令前会先被自动检查有没有危险操作，长任务也会更快、更省钱。",
+   "why": "新增“自动审查”、后台压缩（把很长的对话自动缩短）、时间感知、随时更换工具、系统提示自动缓存，都是做自动化项目直接用得上的。",
+   "source_name": "@OpenAIDevs",
+   "url": "https://x.com/OpenAIDevs/status/2116306164375863343",
+   "published": "10月31日 07:08（北京时间）",
+   "credibility": "official"
+  },
+  {
+   "title": "Anthropic 用数千个 Claude 智能体自动做安全测试研究",
+   "plain": "这是 Anthropic 的一篇新研究：让成千上万个 Claude 智能体自动去做“红队测试”（故意找模型漏洞的安全测试）。和你的关系：说明“让一群 AI 智能体分工干重复活”已经用在严肃的研究里，可以作为 AI 自动化的思路参考。",
+   "why": "一手官方研究，展示了大规模智能体自动化的真实用法。",
+   "source_name": "@AnthropicAI",
+   "url": "https://x.com/AnthropicAI/status/2116349211549843666",
+   "published": "10月31日 09:59（北京时间）",
+   "credibility": "official"
+  },
+  {
+   "title": "OpenAI 推出 Private Intelligence，给企业更强的数据控制",
+   "plain": "这是 OpenAI 面向企业的新隐私方案，让公司用最强模型时能更好地控制自己的数据。和你的关系：以后入职的公司如果担心数据外泄，可能会通过这类方案引入 AI，了解一下有助于和同事沟通。",
+   "why": "企业用 AI 最大的顾虑是数据安全，这是官方给出的答案。",
+   "source_name": "@OpenAI",
+   "url": "https://openai.com/business/private-intelligence/",
+   "published": "10月30日 23:12（北京时间）",
+   "credibility": "official"
+  },
+  {
+   "title": "Google DeepMind 用 Gemini 帮英国政府审批建房申请",
+   "plain": "这是 DeepMind 做的 PlanAssist 工具，帮英国规划审批员处理居民的建房和装修申请。和你的关系：一个“AI 帮人看材料、做初审”的真实落地案例，和简历初筛这类工作思路很像。",
+   "why": "官方称在住户申请评估上最多节省 58% 的时间，是 AI 办公自动化的具体数字参考。",
+   "source_name": "@GoogleDeepMind",
+   "url": "https://x.com/GoogleDeepMind/status/2116524000977285321",
+   "published": "10月31日 21:33（北京时间）",
+   "credibility": "official"
+  }
+ ],
+ "repos": [
+  {
+   "repo": "ARahim3/DigUp",
+   "category": "new",
+   "what": "在自己电脑上“用一句话描述”就能搜到文件的桌面软件，图片、PDF、录音、视频都能按内容找。",
+   "how": "第一步：打开项目页的 Releases，下载你系统（Mac / Windows 测试版 / Linux 测试版）的安装包，装好后选一个文件夹让它建立索引。",
+   "difficulty": "简单",
+   "why": "10 月刚创建就冲上热门，全部在本地运行不上传文件，适合整理求职资料和知识库。",
+   "credibility": "first",
+   "url": "https://github.com/ARahim3/DigUp",
+   "stars": 6077,
+   "updated": "2026-10-27",
+   "created": "2026-10-09",
+   "stats_checked": "2026-11-01"
+  },
+  {
+   "repo": "deepseek-ai/dsh-superagent-prototype",
+   "category": "new",
+   "what": "DeepSeek 官方公开的研究原型：一个盯着 GitHub 仓库、有人提需求就自己开工并提交代码的编程智能体。",
+   "how": "第一步：先读仓库里的 docs/000-philosophy.md，了解“少占人的注意力”的智能体设计思路；真要部署再让你的编程 AI 读 SETUP.md 带你装。",
+   "difficulty": "较难",
+   "why": "10 月 31 日刚发布，官方明确说是研究原型、非正式产品；适合学习 AI 自动化/agent 的设计方法，不建议直接上生产。",
+   "credibility": "official",
+   "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+   "stars": 5795,
+   "updated": "2026-10-31",
+   "created": "2026-10-31",
+   "stats_checked": "2026-11-01"
+  },
+  {
+   "repo": "microsoft/markitdown",
+   "category": "classic",
+   "what": "微软开源的格式转换工具，把 PDF、Word、Excel、PPT 等转成 AI 好读的 Markdown 文本。",
+   "how": "第一步：终端输入 pip install 'markitdown[all]'，然后 markitdown 文件名.pdf -o 输出.md。",
+   "difficulty": "简单",
+   "why": "近 20 万 Star 的老牌工具，仍在持续更新；简历优化和知识库整理的第一步。",
+   "credibility": "first",
+   "url": "https://github.com/microsoft/markitdown",
+   "stars": 193342,
+   "updated": "2026-10-28",
+   "created": "2024-11-14",
+   "stats_checked": "2026-11-01"
+  },
+  {
+   "repo": "n8n-io/n8n",
+   "category": "classic",
+   "what": "拖拽式的工作流自动化平台（类似“如果收到邮件就自动做某事”），内置 AI 功能。",
+   "how": "第一步：装好 Node.js 后在终端输入 npx n8n，浏览器打开 http://localhost:5678 就能开始拖第一个流程。",
+   "difficulty": "一般",
+   "why": "20 万+ Star、今天还在更新，是接 AI 自动化单子最常用的工具之一。注意它是“fair-code”许可，商用前看一下许可条款。",
+   "credibility": "first",
+   "url": "https://github.com/n8n-io/n8n",
+   "stars": 209267,
+   "updated": "2026-11-01",
+   "created": "2019-06-22",
+   "stats_checked": "2026-11-01"
+  },
+  {
+   "repo": "AienTech/dossier",
+   "category": "goal",
+   "what": "自己部署的求职助手：存一份个人履历，针对每个岗位自动写定制简历和求职信，并追踪投递进度。",
+   "how": "第一步：按 README 里的 “Run it on your computer” 用 Docker 跑起来，填好个人资料后粘贴一个岗位描述试试。",
+   "difficulty": "一般",
+   "why": "直接贴合你的求职和简历优化服务；它只用你资料里的事实写简历，也支持本地模型保护隐私。",
+   "credibility": "first",
+   "url": "https://github.com/AienTech/dossier",
+   "stars": 3650,
+   "updated": "2026-11-01",
+   "created": "2026-10-04",
+   "stats_checked": "2026-11-01"
+  }
+ ],
+ "perks": [
+  {
+   "title": "Google AI Pro 学生免费 12 个月",
+   "plain": "这是 Google 给在读大学生的官方优惠，免费用 12 个月 AI 会员（含 Gemini 高级功能）。和你的关系：如果你还在读、学籍能验证，可以白用一年来做简历和自动化。",
+   "why": "官方条款明确，期限长；但到期会自动扣费，记得提前取消。",
+   "who": "18 岁以上、在 Google 支持该方案的国家或地区的高校在读学生（香港、澳门、突尼斯除外，所在地区是否支持请以官方页面为准），需通过 SheerID 验证学生身份，需个人 Google 账号",
+   "deadline": "2026 年 12 月 31 日前领取",
+   "card": "要，需绑定可用的支付方式",
+   "auto_renew": "会，12 个月后按当地标准月费自动扣费，需提前取消",
+   "url": "https://one.google.com/offer/studentoffer8",
+   "credibility": "official"
+  },
+  {
+   "title": "Azure for Students：100 美元额度，免绑卡",
+   "plain": "这是微软给全日制大学生的云服务优惠，100 美元额度可用来调 Azure OpenAI 等 AI 服务。和你的关系：练手做 AI 自动化项目可以用它付 API 费用。",
+   "why": "官方明确不需要信用卡，额度用完不会自动扣钱。",
+   "who": "全日制大学生，用学校邮箱注册验证；每年可续（只要仍是学生）",
+   "deadline": "官方未说明（长期项目）；额度需在 12 个月内用完",
+   "card": "不需要",
+   "auto_renew": "不会；额度用完会邮件询问是否转按量付费，不转就停用",
+   "url": "https://azure.microsoft.com/en-us/free/students",
+   "credibility": "official"
+  },
+  {
+   "title": "OpenAI Codex 学生额度：100 美元",
+   "plain": "这是 OpenAI 给美国、加拿大大学生的编程助手 Codex 使用额度。和你的关系：只有在美加读书才能领，国内学生一般领不了，了解即可。",
+   "why": "官方长期活动；额度 12 个月有效。",
+   "who": "美国或加拿大学位制大学在读、领取时居住在美加的学生，需用大学邮箱通过 SheerID 验证；每人一次",
+   "deadline": "官方未说明；额度发放后 12 个月过期",
+   "card": "官方未说明",
+   "auto_renew": "官方未说明（是一次性额度）",
+   "url": "https://developers.openai.com/community/students",
+   "credibility": "official"
+  }
+ ],
+ "note": "今日说明：@xai 账号目前 0 粉丝、0 帖、简介写“Now at @SpaceXAI”，无法核实为官方信息源，本期未引用；其余 12 个指定账号均已核对为认证账号。周末官方动态较少，GitHub Trending 和 Hacker News 首页今日没有更贴合的 AI 要闻。"
+}

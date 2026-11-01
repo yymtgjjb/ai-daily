@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>每日 AI 快报</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1 class="brand"><a href="./">每日 AI 快报</a></h1>
+  <nav class="tabs" aria-label="视图">
+    <button data-view="day" class="tab" aria-pressed="true">今日</button>
+    <button data-view="archive" class="tab">往期</button>
+    <button data-view="favs" class="tab">我的收藏</button>
+  </nav>
+  <div class="datebar" id="datebar">
+    <button id="prev" class="nav-btn" aria-label="前一天">‹ 前一天</button>
+    <select id="datepick" aria-label="选择日期"></select>
+    <button id="next" class="nav-btn" aria-label="后一天">后一天 ›</button>
+  </div>
+</header>
+<main id="app"><p class="muted">加载中…</p></main>
+<footer class="foot">信息只来自官方账号、官方博客、GitHub、Hugging Face Papers、Hacker News。收藏只保存在你自己的浏览器里。</footer>
+<script src="app.js"></script>
+</body>
+</html>
