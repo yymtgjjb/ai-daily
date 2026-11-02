@@ -16,6 +16,7 @@
   - 先 `get_users_by_usernames` 一次批量核对（verified、粉丝数、简介）；再一次 `search_posts_all`：`(from:A OR from:B …) -is:retweet -is:reply`，`start_time` = 48 小时前，每页最多 25 条，翻页直到没有 next_token。长帖用 `get_posts_by_ids` 取 note_tweet 全文。
   - 不确定是否官方就不引用，并在 `note` 里写明。2026-11-01 核对：@xai 为 0 粉丝 0 帖、简介 “Now at @SpaceXAI”，暂不引用。
 - 官方博客与更新日志、GitHub Trending（https://github.com/trending）、Hugging Face Papers（https://huggingface.co/papers）、Hacker News 首页（https://hacker-news.firebaseio.com/v0/topstories.json）。
+- 国内 AI 官方福利（福利板块必查，优先找「送 token / 免费调用额度 / 新用户赠送额度 / 学生和开发者计划」）：只看各家官方网站、官方文档的定价或活动页、官方公众号或官方 X 账号发布的内容，例如 DeepSeek（platform.deepseek.com）、阿里云百炼和通义千问（bailian.console.aliyun.com、help.aliyun.com）、字节火山方舟和豆包（volcengine.com）、智谱 GLM（bigmodel.cn）、月之暗面 Kimi（platform.moonshot.cn）、百度千帆和文心（cloud.baidu.com）、腾讯混元（cloud.tencent.com）、MiniMax（minimaxi.com）、阶跃星辰（platform.stepfun.com）、硅基流动（siliconflow.cn）、讯飞星火（xfyun.cn）。每条写清送多少 token 或额度、有效期、要不要实名认证。第三方转述的「羊毛」帖不引用，必须找到官方原页面。
 - 禁止营销号、搬运号、标题党、二手转述。没有重要消息就让 `news` 为空数组（页面自动显示「今日无重大更新」），不凑数。绝不编造事实、数字、链接。
 
 ## 选材规则
@@ -27,7 +28,7 @@
   - 2 个 `classic`：长期高 Star、近期仍在维护（pushed_at 在近 30 天内）。
   - 1 个 `goal`：简历优化 / 求职 / AI 自动化 / agent / 知识库整理。
   - 同一 owner/repo 历史只推一次（validate.py 会拦）。不推破解、越狱、盗版、ROM 类仓库。
-- AI 福利：只放官方正规的免费额度、学生/新用户优惠、限时试用、比赛黑客松奖励、开源计划。每条写清官方链接、谁能领（地区/学生/邮箱）、截止时间、是否绑卡、是否自动续费；查不到写「官方未说明」。禁止共享账号、破解、中转站/低价 API、多开套利、先交钱带赚钱。没有就 `perks: []`（显示「今日无新福利」）。只找信息，不注册、不填资料、不付款。福利已推荐过的同一链接不重复，除非有新变化（那就换标题写明变化）。
+- AI 福利：国内官方送 token 和免费额度的活动优先，每期尽量至少 1 条国内的（查不到就不凑）。只放官方正规的免费额度、学生/新用户优惠、限时试用、比赛黑客松奖励、开源计划。每条写清官方链接、谁能领（地区/学生/邮箱）、截止时间、是否绑卡、是否自动续费；查不到写「官方未说明」。禁止共享账号、破解、中转站/低价 API、多开套利、先交钱带赚钱。没有就 `perks: []`（显示「今日无新福利」）。只找信息，不注册、不填资料、不付款。福利已推荐过的同一链接不重复，除非有新变化（那就换标题写明变化）。
 
 ## 写法（给小白，简体中文）
 - 每条 `plain` 开头一句白话：这是什么、和我有什么关系（读者是即将入职的应届生，做简历优化服务和 AI 自动化）。
