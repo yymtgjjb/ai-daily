@@ -1,0 +1,156 @@
+{
+ "date": "2026-11-02",
+ "headline": {
+  "text": "Karpathy 周末只靠和 Claude 对话、约 2 小时做出 HackerTube（从 HN 20 年评论里挑出 6454 个被推荐的视频），成了今天 Hacker News 第一热帖。",
+  "url": "https://x.com/karpathy/status/2116957135661945283",
+  "credibility": "first"
+ },
+ "try": {
+  "title": "给你的 Claude Code 装上“长期记忆”，下次开新对话不用重新交代项目",
+  "plain": "这是今天 GitHub 热榜第一的开源插件 claude-mem，它会自动记下你和 Claude Code（Anthropic 的命令行编程助手）每次干了什么，压缩成摘要，下次新开会话自动带上。和你的关系：做 AI 自动化或简历优化项目时，不用每次都重新解释背景，也更省额度。",
+  "steps": [
+   "确认电脑装了 Node.js 20 或更高版本，并且已经在用 Claude Code",
+   "在终端（命令行窗口）输入：`npx claude-mem install`，按提示完成安装",
+   "重启 Claude Code 正常干活；下次新开会话时问它“我们上次在这个项目做到哪了”，看它是否记得"
+  ],
+  "why": "一条命令装好，解决“AI 每次都失忆”这个最烦的问题；10 万+ Star、Apache-2.0 开源许可、今天还在更新。",
+  "url": "https://github.com/thedotmack/claude-mem",
+  "credibility": "first",
+  "stars_rec": 4,
+  "tags": [
+   "智能体",
+   "知识库",
+   "工具"
+  ]
+ },
+ "news": [
+  {
+   "title": "Karpathy 用 Claude 两小时做出 HackerTube：只看 HN 网友推荐过的视频",
+   "plain": "这是 AI 大牛 Karpathy 的周末小项目：他让 Claude 下载 Hacker News（程序员论坛）20 年的评论，筛出被多人推荐的 6454 个 YouTube 视频，做成一个没有标题党封面的视频站。和你的关系：他说自己几乎不再写代码，只跟 Claude 说需求，手动只做了申请 API 密钥、开服务器、买域名三件事——这正是“AI 自动化接单”的真实工作方式。",
+   "why": "作者本人一手发布，HN 当天第一（2200+ 分），还衍生出 HackerBooks 等模仿项目；站点数据可下载，交给你的 AI 就能做自己的版本。",
+   "source_name": "@karpathy",
+   "url": "https://x.com/karpathy/status/2116957135661945283",
+   "published": "11月2日 02:14（北京时间）",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "自动化",
+    "智能体"
+   ]
+  },
+  {
+   "title": "论文：同样的功能，用 MCP 还是命令行给 AI，表现差别很大",
+   "plain": "这是一篇研究论文，比较了给 AI 智能体接工具的两种方式：MCP（模型上下文协议，一种给 AI 接外部工具的标准）和 CLI（命令行）。结果发现即使功能完全一样，6 个模型在 3 个环境里的成功率和花费都明显不同。和你的关系：做 AI 自动化时，“工具怎么呈现给 AI”本身就会影响效果，值得两种都试试。",
+   "why": "论文原文、Hugging Face 每日论文榜上榜；2004 次对比里 94.3% 的执行过程出现了明显分叉，对搭智能体很有参考价值。",
+   "source_name": "Hugging Face Papers / arXiv",
+   "url": "https://huggingface.co/papers/2610.34298",
+   "published": "10月25日（论文发布日期）",
+   "credibility": "first",
+   "stars_rec": 3,
+   "tags": [
+    "智能体",
+    "研究"
+   ]
+  }
+ ],
+ "repos": [
+  {
+   "repo": "google-research/harness2",
+   "category": "new",
+   "what": "Google Research 开源的智能体“外壳”自动优化框架：让 AI 自己调整提示词、工具、记忆等配套设置，越用越会干活。",
+   "how": "第一步：先看项目主页和 docs/BENCHMARKS.md 里的 JobBench（职场专业任务测试）说明，了解它怎么评估智能体做真实工作。",
+   "difficulty": "较难",
+   "why": "10 月新开源、增长很快；附带的 JobBench 专测“专业工作任务”，和你做 AI 自动化、研究智能体能力直接相关。",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "智能体",
+    "研究"
+   ],
+   "url": "https://github.com/google-research/harness2",
+   "stars": 21887,
+   "updated": "2026-10-14",
+   "created": "2026-10-07",
+   "stats_checked": "2026-11-02"
+  },
+  {
+   "repo": "deepseek-ai/DeepInfer",
+   "category": "new",
+   "what": "DeepSeek 官方开源的推理框架（让大模型跑起来、对外提供服务的底层软件），就是它自家线上服务用的那套。",
+   "how": "第一步：读 README 了解它支持的功能（如结构化输出：让模型按固定 JSON 格式回答）；它需要 NVIDIA SM100 或华为昇腾 950 这类专业卡，普通电脑跑不了。",
+   "difficulty": "较难",
+   "why": "10 月 16 日开源、两周多就 2 万+ Star，是了解大公司怎么部署模型的一手资料；了解即可，不建议新手上手。",
+   "credibility": "official",
+   "stars_rec": 2,
+   "tags": [
+    "模型",
+    "研究"
+   ],
+   "url": "https://github.com/deepseek-ai/DeepInfer",
+   "stars": 24810,
+   "updated": "2026-10-26",
+   "created": "2026-10-16",
+   "stats_checked": "2026-11-02"
+  },
+  {
+   "repo": "lightpanda-io/browser",
+   "category": "classic",
+   "what": "专门给 AI 智能体和自动化用的“无界面浏览器”（不显示窗口、在后台自动打开网页的浏览器），官方测试比 Chrome 省内存约 16 倍、快约 9 倍。",
+   "how": "第一步：Mac 用户在终端输入 `brew install lightpanda-io/browser/lightpanda`，再运行 `lightpanda version` 确认装好。",
+   "difficulty": "一般",
+   "why": "4 万 Star、今天还在更新，今天也在 GitHub 热榜；做批量抓取招聘信息、自动填表类自动化时比 Chrome 轻很多。注意是 AGPL-3.0 许可，商用前看条款。",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "自动化",
+    "工具"
+   ],
+   "url": "https://github.com/lightpanda-io/browser",
+   "stars": 40100,
+   "updated": "2026-11-02",
+   "created": "2023-02-07",
+   "stats_checked": "2026-11-02"
+  },
+  {
+   "repo": "patchy631/ai-engineering-hub",
+   "category": "classic",
+   "what": "一个大合集：手把手教你做大模型应用、RAG（让 AI 先查资料再回答的技术）和 AI 智能体的实战教程与代码。",
+   "how": "第一步：打开仓库，按目录找一个和“智能体”或“RAG”相关的小项目，照着它的 README 跑通。",
+   "difficulty": "一般",
+   "why": "4 万 Star、持续更新，今天在热榜；入职前补 AI 工程实战经验、给简历加项目都很合适。",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "智能体",
+    "知识库"
+   ],
+   "url": "https://github.com/patchy631/ai-engineering-hub",
+   "stars": 40206,
+   "updated": "2026-11-01",
+   "created": "2024-10-21",
+   "stats_checked": "2026-11-02"
+  },
+  {
+   "repo": "thedotmack/claude-mem",
+   "category": "goal",
+   "what": "给 Claude Code 等编程智能体加“长期记忆”的插件：自动记录每次会话做了什么，压缩成摘要，下次自动带上。",
+   "how": "第一步：装好 Node.js 20+ 和 Claude Code 后，终端输入 `npx claude-mem install`。",
+   "difficulty": "简单",
+   "why": "今天 GitHub 热榜第一（单日 1500+ Star）；正好解决 AI 自动化项目里“智能体记不住上下文”的问题，也是一种自动整理项目知识库的方式。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "智能体",
+    "知识库",
+    "自动化"
+   ],
+   "url": "https://github.com/thedotmack/claude-mem",
+   "stars": 109224,
+   "updated": "2026-11-02",
+   "created": "2025-09-01",
+   "stats_checked": "2026-11-02"
+  }
+ ],
+ "perks": [],
+ "note": "今日说明：已核对 12 个指定 X 账号均为认证账号；@xai 仍为 0 粉丝、0 帖、简介 “Now at @SpaceXAI”，无法核实，未引用。周末 48 小时内官方账号只有 3 条原创帖（其中 2 条昨天已收录），官方新产品发布较少，所以要闻只有 2 条。今天没有查到新的、可核实的官方福利。"
+}

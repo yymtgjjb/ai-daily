@@ -1,6 +1,10 @@
 {
- "updated": "2026-11-01",
+ "updated": "2026-11-02",
  "days": [
+  {
+   "date": "2026-11-02",
+   "headline": "Karpathy 周末只靠和 Claude 对话、约 2 小时做出 HackerTube（从 HN 20 年评论里挑出 6454 个被推荐的视频），成了今天 Hacker News 第一热帖。"
+  },
   {
    "date": "2026-11-01",
    "headline": "Claude 把 Max 套餐改名（Max 5x→Max、Max 20x→Ultra），价格不变，并开始给已验证的 Ultra 账号取消“5 小时用量上限”。"
