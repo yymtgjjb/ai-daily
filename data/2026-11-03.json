@@ -1,0 +1,202 @@
+{
+ "date": "2026-11-03",
+ "headline": {
+  "text": "OpenAI 发布 LifeVal 测试：专门衡量 AI 能不能帮普通人把日常事办成（比如找幼儿园、办政务、做预算），而不只是聊天给建议。",
+  "url": "https://openai.com/index/lifeval/",
+  "credibility": "official"
+ },
+ "try": {
+  "title": "一条命令把招聘页面抓成干净文本，再让 AI 对着岗位改简历",
+  "plain": "这是 9 万+ Star 的开源抓网页工具 Scrapling，它的命令行（终端里直接输命令）能把一个网页存成 Markdown（带标题和列表的纯文本）。和你的关系：做简历优化服务时，先把客户想投的岗位描述抓下来，再和简历一起交给 AI，改出来的内容更贴岗位。",
+  "steps": [
+   "电脑装好 Python 3.10 或更高版本后，在终端输入 `pip install \"scrapling[fetchers]\"`，再输入 `scrapling install`（会下载它要用的浏览器组件）",
+   "把一个公开的招聘页面链接换进去运行：`scrapling extract get '岗位页面链接' job.md --ai-targeted`，得到 job.md 文件",
+   "把 job.md 和简历文本一起贴给 ChatGPT 或 Claude，让它“只用我简历里的事实，按这个岗位的要求改写要点”"
+  ],
+  "why": "省掉手动复制粘贴岗位描述、清理格式的时间；只抓公开页面、量少即可，别批量猛抓，遵守网站规则。",
+  "url": "https://github.com/D4Vinci/Scrapling",
+  "credibility": "first",
+  "stars_rec": 5,
+  "tags": [
+   "简历",
+   "求职",
+   "工具"
+  ]
+ },
+ "news": [
+  {
+   "title": "OpenAI 发布 LifeVal：给“AI 帮你办日常事”打分",
+   "plain": "这是 OpenAI 新做的一套评测（benchmark，给模型打分的标准考题），题目来自近 4000 人的问卷，覆盖照顾家人、健康、教育、理财、购物、办政务等日常事。和你的关系：AI 正从“回答问题”走向“替你把事办完”，这正是 AI 自动化服务的方向。",
+   "why": "官方博客发布；官方给出的例子里，当前模型在“搬家后选幼儿园”任务上得分 93.1%，并说过去一年重点提升了浏览器操作、电脑操作和连接各种应用的能力。",
+   "source_name": "@OpenAI / OpenAI 官网",
+   "url": "https://openai.com/index/lifeval/",
+   "published": "11月3日 01:27（北京时间）",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "智能体",
+    "自动化"
+   ]
+  },
+  {
+   "title": "Anthropic 开放 Residency 带薪研究项目申请，11 月 22 日截止",
+   "plain": "这是 Anthropic（Claude 背后的公司）的短期带薪研究项目，为期 6 周到 6 个月，不要求机器学习背景。和你的关系：它主要面向教授、技术创始人和资深工程师，应届生大概率不符合，但能看出 AI 公司正在招其他理工科背景的人转行做 AI。",
+   "why": "官方一手发布，140 万次浏览；官方写明报酬折合年薪 35 万到 50 万美元，可远程参加（短期更容易），同时会被考虑进入 Anthropic Fellows 项目。",
+   "source_name": "@AnthropicAI / Anthropic 官网",
+   "url": "https://alignment.anthropic.com/2026/anthropic-residency/",
+   "published": "11月3日 03:51（北京时间）",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "求职",
+    "研究"
+   ]
+  },
+  {
+   "title": "美团 LongCat-2.5 发布：能看图、会写代码的长任务智能体模型",
+   "plain": "这是美团 LongCat 团队的新大模型，总参数 1.6 万亿、每次实际用到约 480 亿（MoE 结构：只调用一部分“专家”来省算力），主打看懂图片和长时间自己写代码、搭完整项目。和你的关系：国产模型在“智能体干长活”上又多了一个选择，也在国产芯片上做了推理优化。",
+   "why": "官方博客发布，今天上了 Hacker News 首页；博客里和 GPT-5.5、Claude-Opus-5 等做了对比，具体分数以官方页面为准。",
+   "source_name": "LongCat 官方博客",
+   "url": "https://longcat.ai/blog/longcat-2.5/",
+   "published": "11月1日（官方博客日期）",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "模型",
+    "智能体"
+   ]
+  },
+  {
+   "title": "OpenAI 自研 Git 后端 Pando，为大量 AI 智能体提交代码扩容",
+   "plain": "这是 OpenAI 给自家代码仓库换的新“存代码服务器”系统。Git 是程序员管理代码版本的工具，现在 AI 智能体也在大量提交代码，所以原来的系统扛不住了。和你的关系：说明 AI 智能体写代码已经多到要专门改造基础设施的程度。",
+   "why": "官方开发者账号发布；官方称推送代码的延迟降低约 80%，现在每天处理接近 1PB（约 100 万 GB）的 Git 数据。",
+   "source_name": "@OpenAIDevs",
+   "url": "https://x.com/OpenAIDevs/status/2117408792346509663",
+   "published": "11月3日 08:09（北京时间）",
+   "credibility": "official",
+   "stars_rec": 2,
+   "tags": [
+    "智能体"
+   ]
+  }
+ ],
+ "repos": [
+  {
+   "repo": "tangency-labs/solidcraft",
+   "category": "new",
+   "what": "开源的参数化 3D CAD 软件（像 SolidWorks、NX 那样画草图、拉伸、倒角建模），自带 MCP 接口（让 AI 智能体直接操作软件的标准接口），AI 可以帮你建模。",
+   "how": "第一步：不用安装，直接打开官网的网页版 https://solidcraft.io/app 画一个简单零件试试。",
+   "difficulty": "一般",
+   "why": "10 月 8 日刚开源就上万 Star；你对“用 AI 自动化 NX 这类 CAD 软件”感兴趣，它的 MCP 接口就是现成的思路参考。官方说目前适合简单零件。",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "自动化",
+    "智能体",
+    "工具"
+   ],
+   "url": "https://github.com/tangency-labs/solidcraft",
+   "stars": 13179,
+   "updated": "2026-11-03",
+   "created": "2026-10-08",
+   "stats_checked": "2026-11-03"
+  },
+  {
+   "repo": "heydamir/unslop",
+   "category": "new",
+   "what": "一个给 Claude Code 和 Codex 用的技能（skill，教 AI 按固定方法干活的说明包），能把“一看就是 AI 生成”的网页界面改得更像设计师做的。",
+   "how": "第一步：在终端输入 `git clone https://github.com/heydamir/unslop`，再输入 `mkdir -p ~/.claude/skills && cp -r unslop/skills/unslop ~/.claude/skills/`，然后在 Claude Code 里输入 `/unslop 这个页面`。",
+   "difficulty": "简单",
+   "why": "10 月 29 日才发布、几天就 6000+ Star；做简历优化服务的落地页、作品集时，能让页面看起来更专业。许可是 CC BY 4.0，商用要署名作者。",
+   "credibility": "first",
+   "stars_rec": 3,
+   "tags": [
+    "工具",
+    "智能体"
+   ],
+   "url": "https://github.com/heydamir/unslop",
+   "stars": 6245,
+   "updated": "2026-11-02",
+   "created": "2026-10-29",
+   "stats_checked": "2026-11-03"
+  },
+  {
+   "repo": "D4Vinci/Scrapling",
+   "category": "classic",
+   "what": "一站式抓网页的 Python 工具：能快速请求网页、模拟浏览器打开需要加载的页面，还能把整页存成干净的 Markdown。",
+   "how": "第一步：终端输入 `pip install \"scrapling[fetchers]\"` 和 `scrapling install`，然后用 `scrapling extract get '网页链接' page.md` 抓一个页面看看。",
+   "difficulty": "简单",
+   "why": "9 万+ Star、今天还在更新、今天也上了 GitHub 热榜；做收集招聘信息、整理资料这类自动化时很顺手，还自带给 AI 智能体用的 MCP 接口。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "自动化",
+    "求职",
+    "工具"
+   ],
+   "url": "https://github.com/D4Vinci/Scrapling",
+   "stars": 92818,
+   "updated": "2026-11-03",
+   "created": "2024-10-14",
+   "stats_checked": "2026-11-03"
+  },
+  {
+   "repo": "paperclipai/paperclip",
+   "category": "classic",
+   "what": "开源的“AI 员工管理后台”：把多个 AI 智能体组成一个团队，给它们定目标、分任务、设预算，在一个面板里看进度和花费。",
+   "how": "第一步：打开仓库 README 的 Quickstart（快速开始）部分，按步骤在自己电脑上跑起来，先只“雇”一个智能体试试。",
+   "difficulty": "一般",
+   "why": "11 万 Star、今天还在更新；你在做多个 bot 分工协作，它的“目标、预算、审批”思路能直接借鉴。",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "智能体",
+    "自动化"
+   ],
+   "url": "https://github.com/paperclipai/paperclip",
+   "stars": 110381,
+   "updated": "2026-11-03",
+   "created": "2026-03-02",
+   "stats_checked": "2026-11-03"
+  },
+  {
+   "repo": "vercel-labs/agent-desktop",
+   "category": "goal",
+   "what": "Vercel 出的命令行工具，让 AI 智能体能“看懂并操作”电脑上的桌面软件：它读取软件界面里每个按钮、输入框，给出编号，AI 按编号点击，不靠截图猜位置。",
+   "how": "第一步：装好 Node.js 后，终端输入 `npm install -g agent-desktop`，再输入 `agent-desktop version` 确认装好；Mac 还要按 `agent-desktop permissions --guide` 打开辅助功能权限。",
+   "difficulty": "一般",
+   "why": "今天 GitHub 热榜第一（单日 2000+ Star），Apache-2.0 许可；想让 AI 自动操作没有接口的桌面软件（比如 CAD、办公软件）时，它是很直接的入口。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "自动化",
+    "智能体",
+    "工具"
+   ],
+   "url": "https://github.com/vercel-labs/agent-desktop",
+   "stars": 9595,
+   "updated": "2026-11-03",
+   "created": "2026-02-20",
+   "stats_checked": "2026-11-03"
+  }
+ ],
+ "perks": [
+  {
+   "title": "阿里云百炼新人免费额度：每个模型约 100 万 Token，90 天有效",
+   "plain": "这是阿里云大模型平台百炼给新开通用户的免费调用额度，通义千问等每个模型各自送（通常 100 万 Token，Token 是 AI 计算字数的单位），官方页面列出的模型里也有 Kimi、GLM 等。和你的关系：做简历优化或 AI 自动化的小项目，可以先用免费额度把流程跑通。",
+   "why": "阿里云官方帮助文档写明规则；还能开“免费额度用完即停”开关，避免用超了自动扣钱。",
+   "who": "首次开通阿里云百炼、已完成实名认证的用户；只有华北 2（北京）地域的模型有额度",
+   "deadline": "官方未说明活动截止；额度自开通（或模型发布、申请通过）起 90 天内有效",
+   "card": "官方未说明是否绑卡（需要实名认证）",
+   "auto_renew": "额度用完后自动转为按量付费；可在控制台提前打开“免费额度用完即停”",
+   "url": "https://help.aliyun.com/zh/model-studio/new-free-quota",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "福利",
+    "模型"
+   ]
+  }
+ ],
+ "note": "今日说明：已核对 12 个指定 X 账号均为认证账号；@xai 仍为 0 粉丝、0 帖、简介 “Now at @SpaceXAI”，无法核实，未引用。48 小时内官方账号原创帖共 4 条（其中 1 条昨天已收录）。福利只收录官方帮助文档能核实的阿里云百炼；网上流传的其他平台送 Token 说法未找到官方原页面，未收录。"
+}

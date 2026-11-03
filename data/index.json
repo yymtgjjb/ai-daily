@@ -1,6 +1,10 @@
 {
- "updated": "2026-11-02",
+ "updated": "2026-11-03",
  "days": [
+  {
+   "date": "2026-11-03",
+   "headline": "OpenAI 发布 LifeVal 测试：专门衡量 AI 能不能帮普通人把日常事办成（比如找幼儿园、办政务、做预算），而不只是聊天给建议。"
+  },
   {
    "date": "2026-11-02",
    "headline": "Karpathy 周末只靠和 Claude 对话、约 2 小时做出 HackerTube（从 HN 20 年评论里挑出 6454 个被推荐的视频），成了今天 Hacker News 第一热帖。"
