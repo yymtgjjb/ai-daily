@@ -1,0 +1,205 @@
+{
+ "date": "2026-11-04",
+ "headline": {
+  "text": "OpenAI 公布 ChatGPT 和 Codex 进军“实体工程”：已能帮工程师改 CAD 模型、出工程图、搭仿真，还用模型在一周内设计出一台能用的小硬件（但量产前仍要人工反复把关）。",
+  "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world/",
+  "credibility": "official"
+ },
+ "try": {
+  "title": "在自己电脑上跑开源 Resume-Matcher：上传简历 + 粘贴岗位描述，自动给出针对性改写",
+  "plain": "这是 GitHub 上近 3 万 Star 的开源简历工具 Resume-Matcher，用 Docker（一种“打包好、一条命令就能运行”的软件容器）在本机启动，不用注册账号，简历存在你自己电脑里。和你的关系：你做简历优化服务，可以直接拿它看别人怎么做“对岗改写 + ATS 评分（ATS：企业用来自动筛简历的系统）”，也能当自己的工作台。",
+  "steps": [
+   "电脑先装好 Docker Desktop，然后在终端运行 `docker run --name resume-matcher -p 3000:3000 -v resume-data:/app/backend/data ghcr.io/srbhr/resume-matcher:latest`",
+   "浏览器打开 `http://localhost:3000`，在设置里选一个 AI 模型并填你自己的 API Key（支持 DeepSeek、OpenAI、Gemini 等，也可以用本地 Ollama 完全不联网）",
+   "上传一份主简历（PDF 或 Word），粘贴一个目标岗位描述，查看它给的改写建议和 ATS 检查结果，满意后导出 PDF"
+  ],
+  "why": "官方 README 写明改写提示词禁止编造你简历里没有的技能、公司和数字，ATS 打分是普通代码不调用 AI，结果可复查；适合拿来研究简历优化服务的标准流程。只用自己的或已获授权的简历测试。",
+  "url": "https://github.com/srbhr/Resume-Matcher",
+  "credibility": "first",
+  "stars_rec": 5,
+  "tags": [
+   "简历",
+   "求职",
+   "工具"
+  ]
+ },
+ "news": [
+  {
+   "title": "OpenAI：ChatGPT 和 Codex 开始帮工程师做机械、电子设计和仿真",
+   "plain": "OpenAI 官方发文说，自家硬件团队已用 ChatGPT 和 Codex 改 CAD（计算机辅助设计，像 NX、SolidWorks 那样画零件）模型、把 3D 模型转成 2D 工程图、设置仿真和 FEA（有限元分析，算零件受力会不会坏）。和你的关系：你是机电背景、又对用 AI 自动化 NX 感兴趣，这是官方第一次系统讲 AI 进工程设计。",
+   "why": "官方博客一手信息：硬件团队的模型用量从 2 月到现在涨了 23 倍；他们用 GPT-6 和 Astra 在不到一周内做出一台带外壳、电路板和固件的小设备，但官方也承认模型没有充分考虑制造商的工艺限制、公差和装配细节，量产前还要多轮人工审查。官方还在征集工程公司和软件厂商合作。",
+   "source_name": "@OpenAI / OpenAI 官网",
+   "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world/",
+   "published": "11月4日 02:56（北京时间）",
+   "credibility": "official",
+   "stars_rec": 5,
+   "tags": [
+    "自动化",
+    "智能体",
+    "模型"
+   ]
+  },
+  {
+   "title": "Anthropic 开源 FlashProve：用密码学证明“这条回答真的是那个模型生成的”",
+   "plain": "这是 Anthropic（Claude 背后的公司）的新研究：模型服务方给每条回答附一份“数学证明”，用户不用拿到模型、也不用显卡，就能在普通电脑上几十秒内验证回答确实来自声称的那个模型。和你的关系：以后用中转或第三方平台调 AI 时，“是不是被偷偷换成便宜模型”有望能查证。",
+   "why": "官方研究博客，代码、Lean（一种能让电脑检查数学证明的语言）证明以 Apache 2.0 开源；官方说在单张 H100 显卡上对 4000 亿参数模型每秒能出约 110 个 token 的证明，但仍是研究原型，目前只支持 1024 token 以内的短上下文。",
+   "source_name": "@AnthropicAI / Anthropic 官网",
+   "url": "https://www.anthropic.com/research/provable-inference",
+   "published": "11月4日 03:54（北京时间）",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "安全",
+    "研究"
+   ]
+  },
+  {
+   "title": "OpenAI 启动新一轮内部安全冲刺，漏洞赏金最高 17.2 万美元",
+   "plain": "OpenAI 说要联合外部安全公司 Cathedral，用自家模型主动攻击自己的系统找漏洞，同时把高危漏洞赏金提高到原来的 4 倍以上。和你的关系：AI 已经能大量找漏洞，做 AI 自动化服务时更要注意密钥、权限这些安全细节。",
+   "why": "官方博客和官方账号发布；官方说上一轮冲刺投入了 25% 的产品工程师，用 Codex 复现漏洞、准备补丁；特别优秀的发现（含奖金）最高可得 17.2 万美元。",
+   "source_name": "@OpenAI / OpenAI 官网",
+   "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai/",
+   "published": "11月3日 10:29（北京时间）",
+   "credibility": "official",
+   "stars_rec": 2,
+   "tags": [
+    "安全"
+   ]
+  },
+  {
+   "title": "用户报告：Postman 桌面版自动给 Codex、Claude Code 装插件，引发争议",
+   "plain": "Postman 是程序员常用的接口测试软件。一位用户在 Postman 官方 GitHub 问题区报告：打开 Postman 后，它自动给电脑上的 Codex 和 Claude Code（两款 AI 编程助手）装了自家插件和启动指令，让 AI 处理接口任务时优先走 Postman。和你的关系：做 AI 自动化时，要定期检查 AI 工具的插件和配置有没有被别的软件改过。",
+   "why": "今天 Hacker News 首页最热帖之一（近 1000 分）；举报者贴出了 Postman 自己日志里的自动安装记录。截至发稿，该问题仍未关闭，未看到 Postman 官方人员回复，属于用户一方说法。",
+   "source_name": "GitHub Issue（经 Hacker News）",
+   "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
+   "published": "10月26日 03:03（北京时间，问题创建时间）",
+   "credibility": "media",
+   "stars_rec": 3,
+   "tags": [
+    "安全",
+    "工具",
+    "智能体"
+   ]
+  }
+ ],
+ "repos": [
+  {
+   "repo": "storytold/cadcraft",
+   "category": "new",
+   "what": "开源的 2D/3D CAD 绘图软件（类似 AutoCAD 的命令行、捕捉、图层、标注、DXF 图纸），用 Rust 写成，支持 MCP（让 AI 智能体直接操作软件的标准接口）。",
+   "how": "第一步：打开项目页的 CADCraft 官网链接（getartcraft.com/apps/cadcraft）了解网页版和下载方式，先画一张简单的二维零件图试试。",
+   "difficulty": "一般",
+   "why": "10 月 7 日才创建；和今天 OpenAI 的“AI 做工程设计”新闻正好呼应，能让 AI 智能体驱动画图，是你研究 AI 自动化 CAD 的现成样本。官方标注仍处于早期开发阶段。",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "自动化",
+    "智能体",
+    "工具"
+   ],
+   "url": "https://github.com/storytold/cadcraft",
+   "stars": 7565,
+   "updated": "2026-11-04",
+   "created": "2026-10-07",
+   "stats_checked": "2026-11-04"
+  },
+  {
+   "repo": "wangzan101/Mika",
+   "category": "new",
+   "what": "装在安卓手机上的 AI 助手：说一句话，它在后台虚拟屏幕里替你操作 App 和网页把事办完（比如总结群聊、比价加购物车）。",
+   "how": "第一步：在项目的 Releases 页下载 APK（安卓 11 及以上），装在备用手机上，先让它做“读出新闻网站前 5 条”这种只读任务。",
+   "difficulty": "一般",
+   "why": "10 月 29 日创建就有 6000+ Star，是“手机端 AI 智能体自动化”的直观样例。注意：让它自动操作微信、招聘 App 可能违反这些平台的用户协议，有封号风险，建议只做只读测试，涉及付款和发消息一定自己确认。",
+   "credibility": "first",
+   "stars_rec": 3,
+   "tags": [
+    "智能体",
+    "自动化"
+   ],
+   "url": "https://github.com/wangzan101/Mika",
+   "stars": 6043,
+   "updated": "2026-11-04",
+   "created": "2026-10-29",
+   "stats_checked": "2026-11-04"
+  },
+  {
+   "repo": "reactive-resume/reactive-resume",
+   "category": "classic",
+   "what": "老牌免费开源简历制作工具，写简历、写求职信、检查内容、跟踪投递进度都能做，可自己部署保护隐私。",
+   "how": "第一步：直接打开官网 https://rxresu.me 选一个模板，把你现有简历的内容填进去导出 PDF。",
+   "difficulty": "简单",
+   "why": "2020 年开源至今 4 万多 Star，今天仍在更新；做简历优化服务时可当模板和排版参考，也能推荐给客户自己改。",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "简历",
+    "求职",
+    "工具"
+   ],
+   "url": "https://github.com/reactive-resume/reactive-resume",
+   "stars": 45294,
+   "updated": "2026-11-04",
+   "created": "2020-03-25",
+   "stats_checked": "2026-11-04"
+  },
+  {
+   "repo": "mattpocock/skills",
+   "category": "classic",
+   "what": "知名开发者 Matt Pocock 公开的一套 AI 编程助手“技能包”（skills：写好的工作方法说明，让 AI 按固定流程干活），支持 Claude Code、Codex 等。",
+   "how": "第一步：如果你用 Claude Code，终端运行 `claude plugin install mattpocock-skills@claude-plugins-official` 装上，再看看每个技能文件是怎么写的。",
+   "difficulty": "简单",
+   "why": "30 万+ Star、近几天仍在维护；技能都很短、可改，正好学习怎么给自己的 AI 自动化流程写“工作说明书”。",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "智能体",
+    "自动化",
+    "工具"
+   ],
+   "url": "https://github.com/mattpocock/skills",
+   "stars": 311429,
+   "updated": "2026-11-01",
+   "created": "2026-02-03",
+   "stats_checked": "2026-11-04"
+  },
+  {
+   "repo": "srbhr/Resume-Matcher",
+   "category": "goal",
+   "what": "开源的“对岗改简历”工具：上传主简历、粘贴岗位描述，AI 给出针对性改写、求职信和 ATS（企业自动筛简历系统）检查，可本机运行。",
+   "how": "第一步：按今天“最值得试”里的 3 步用 Docker 跑起来；进阶可用它的 MCP 接口让 Claude Code 或 Codex 直接写简历。",
+   "difficulty": "一般",
+   "why": "和你的简历优化服务几乎一一对应：主简历→对岗改写→评分→导出的完整流程都开源了，可以直接学它的流程设计和“不编造经历”的提示词规则。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "简历",
+    "求职",
+    "自动化"
+   ],
+   "url": "https://github.com/srbhr/Resume-Matcher",
+   "stars": 29105,
+   "updated": "2026-11-02",
+   "created": "2020-04-08",
+   "stats_checked": "2026-11-04"
+  }
+ ],
+ "perks": [
+  {
+   "title": "火山方舟（豆包所在平台）新用户免费额度：文本模型每个各 50 万 Token",
+   "plain": "这是字节跳动火山引擎旗下大模型平台“火山方舟”给新用户的免费调用额度，按模型分别给（不是整个账号只有一份），文本模型每个约 50 万 Token（Token 是 AI 计算字数的单位，官方说约等于 38 万字中文）。和你的关系：可以零成本用豆包等模型把简历改写、自动化小流程先跑通。",
+   "why": "火山方舟官方文档写明规则；还有“安心体验模式”：开启后只消耗免费额度，快用完时服务自动暂停，不会产生费用，适合新手。注意免费额度不能抵扣插件、知识库、批量推理、精调的费用。",
+   "who": "注册火山引擎账号的新用户（同一主账号和子账号共享额度）；“安心体验模式”需是未开通过模型服务的实名认证个人或企业账号",
+   "deadline": "官方未说明活动截止和额度有效期",
+   "card": "官方未说明是否绑卡；免费额度用完后要继续用需实名认证并手动开通模型服务",
+   "auto_renew": "不会自动续费：额度用完调用会直接失败；但手动开通模型服务后会转为按量付费，建议开“安心体验模式”或在开通管理里设用量上限",
+   "url": "https://ark.volcengine.com/region:cn-beijing/docs/free-inference-quota",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "福利",
+    "模型"
+   ]
+  }
+ ],
+ "note": "今日说明：已核对 12 个指定 X 账号均为认证账号；@xai 仍为 0 粉丝、0 帖、简介 “Now at @SpaceXAI”，无法核实，未引用。48 小时内官方账号原创帖共 7 条（其中 3 条往期已收录）。福利只收录火山方舟官方文档能核实的内容；智谱 BigModel 官方登录页写有“新用户送 2000 万 tokens 体验包”，但有效期、实名等细则未找到官方规则页，暂不收录。"
+}
