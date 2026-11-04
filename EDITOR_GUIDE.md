@@ -15,6 +15,7 @@
 - X 官方账号：@OpenAI @OpenAIDevs @AnthropicAI @claudeai @GoogleDeepMind @GoogleAI @xai @AIatMeta @deepseek_ai @Alibaba_Qwen @karpathy @AndrewYNg @huggingface
   - 先 `get_users_by_usernames` 一次批量核对（verified、粉丝数、简介）；再一次 `search_posts_all`：`(from:A OR from:B …) -is:retweet -is:reply`，`start_time` = 48 小时前，每页最多 25 条，翻页直到没有 next_token。长帖用 `get_posts_by_ids` 取 note_tweet 全文。
   - 不确定是否官方就不引用，并在 `note` 里写明。2026-11-01 核对：@xai 为 0 粉丝 0 帖、简介 “Now at @SpaceXAI”，暂不引用。
+- AIHOT（https://aihot.news）作**参考源**（线索，不是原文库）：每天先用匿名只读接口扫精选/热点/日报（如 `curl --compressed https://aihot.news/api/v1/agent/latest` 或 `/api/v1/dailies/latest`；也可用 RSS `https://aihot.news/feed.xml`）。它筛出的好内容可以进我们的要闻/值得试/项目线索；**禁止**把 AIHOT 的标题、摘要、正文原样贴进 `data/*.json` 或页面。每条必须：①自己用白话重写；②核对并链接官方/一手原文（官方博客、官方 X、GitHub、论文页等）；③核对不到原文就不写进本期，可在 `note` 记一句。不把 AIHOT 页面链接当 `url`。公开再分发 AIHOT 原文需书面授权，我们不做。
 - 官方博客与更新日志、GitHub Trending（https://github.com/trending）、Hugging Face Papers（https://huggingface.co/papers）、Hacker News 首页（https://hacker-news.firebaseio.com/v0/topstories.json）。
 - 国内 AI 官方福利（福利板块必查，优先找「送 token / 免费调用额度 / 新用户赠送额度 / 学生和开发者计划」）：只看各家官方网站、官方文档的定价或活动页、官方公众号或官方 X 账号发布的内容，例如 DeepSeek（platform.deepseek.com）、阿里云百炼和通义千问（bailian.console.aliyun.com、help.aliyun.com）、字节火山方舟和豆包（volcengine.com）、智谱 GLM（bigmodel.cn）、月之暗面 Kimi（platform.moonshot.cn）、百度千帆和文心（cloud.baidu.com）、腾讯混元（cloud.tencent.com）、MiniMax（minimaxi.com）、阶跃星辰（platform.stepfun.com）、硅基流动（siliconflow.cn）、讯飞星火（xfyun.cn）。每条写清送多少 token 或额度、有效期、要不要实名认证。第三方转述的「羊毛」帖不引用，必须找到官方原页面。
 - 禁止营销号、搬运号、标题党、二手转述。没有重要消息就让 `news` 为空数组（页面自动显示「今日无重大更新」），不凑数。绝不编造事实、数字、链接。
