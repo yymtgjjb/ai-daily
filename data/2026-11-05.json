@@ -1,0 +1,217 @@
+{
+ "date": "2026-11-05",
+ "headline": {
+  "text": "OpenAI 发布 Images 2.6：出图大约快一半，支持做 GIF 动画，ChatGPT 和 Codex 全档位都能用；API 同步上线 Flare、Sunburst 两款图像模型。",
+  "url": "https://openai.com/index/introducing-images-2-6/",
+  "credibility": "official"
+ },
+ "try": {
+  "title": "给本机命令行 Agent 装上 Agent Autoloop：关掉终端它还能在后台自己把任务跟完",
+  "plain": "这是刚开源的轻量自动化工具 Agent Autoloop：把 Claude Code、Codex 这类“命令行 AI 助手”接到后台调度上，平时它自己接活、自己跟进；拿不准时才把卡片推到飞书/钉钉/企微/Slack 让你拍板。和你的关系：你在做 AI 自动化，这正好是“人不用一直盯着终端”的最小方案，一台电脑一条命令就能跑，不用买云服务器。",
+  "steps": [
+   "确认电脑是 macOS 或 Linux，已装好 Node 24、Git、curl，并且本机已登录好 Claude Code 或 Codex（Windows 作者说明要到 11 月 7–8 日才正式支持）",
+   "在终端运行 `curl -fsSL https://raw.githubusercontent.com/KKKKhazix/agent-autoloop/main/install.sh | sh`，装完用 `agent-autoloop --help` 确认命令可用",
+   "打开仓库 README 里的“拿来即用的场景模板”，选一个简单模板（例如定时整理笔记），按文档接上你的 Agent 和通知渠道，跑通第一轮后再换成自己的简历/自动化任务"
+  ],
+  "why": "作者本人仓库，创建于 11 月 3 日，今天仍在更新；强调零外部依赖内核、插件可替换，适合先小样本验证“后台 Agent”思路。安装脚本装的是正式 Release，不是随便的开发分支。",
+  "url": "https://github.com/KKKKhazix/agent-autoloop",
+  "credibility": "first",
+  "stars_rec": 5,
+  "tags": [
+   "智能体",
+   "自动化",
+   "工具"
+  ]
+ },
+ "news": [
+  {
+   "title": "OpenAI Images 2.6 上线：更快、能做 GIF，全档位 ChatGPT/Codex 可用",
+   "plain": "OpenAI 官方说，Images 2.6 已在 ChatGPT、Codex 和 API 上线，图像生成平均比之前快约 50%，还能把想法做成 GIF 循环动画；API 提供 Flare（低质量最快约 6 秒）和 Sunburst（中高质量、编辑更稳）两款模型。和你的关系：做简历作品集、产品示意、社媒配图时，可以更快迭代，不必再靠一堆第三方绘图站。",
+   "why": "官方博客与 @OpenAI / @OpenAIDevs 同步发布；写明全球各档位订阅、桌面/手机/网页都可用，并给出 SVG 导出、图像标记编辑等 API 新能力。",
+   "source_name": "@OpenAI / OpenAI 官网",
+   "url": "https://openai.com/index/introducing-images-2-6/",
+   "published": "11月5日 07:35（北京时间）",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "工具",
+    "模型"
+   ]
+  },
+  {
+   "title": "OpenAI 用 cyber 模型自动挖 Linux 漏洞：一次跑出 948 个本地提权并生成补丁",
+   "plain": "OpenAI 安全团队公开了一条“发现—验证—利用评估—打补丁”的自动化流水线。在一次对最新 Linux 内核的运行里，动态复现了 1724 个漏洞，并做出 948 个本地提权（LPE，普通用户权限升到管理员）利用及对应补丁，API 总成本约 121 万美元。和你的关系：AI 智能体已经能规模化找漏洞，自己做自动化服务时，密钥、沙箱和最小权限更不能省。",
+   "why": "官方长文给出各阶段费用与方法；并称智能体用到了至少 10 种据他们与咨询专家所知此前未见的利用手法。漏洞已按社区建议优先上报关键问题，补丁仍需人工审查后上游合并。",
+   "source_name": "@OpenAI / OpenAI 官网",
+   "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+   "published": "11月5日 07:13（北京时间）",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "安全",
+    "智能体",
+    "研究"
+   ]
+  },
+  {
+   "title": "OpenAI 宣布收购 Pierre：把更好的代码浏览与 Diff 审阅能力并进 Codex",
+   "plain": "OpenAI 说将收购 Pierre Computer Company（Code Storage 和一批开源开发者工具的背后公司）。你在 Codex 应用里浏览文件、审代码变更时用到的 Trees、Diffs 库，就是 Pierre 做的。和你的关系：以后用 AI 写代码、看 diff，审阅体验可能会更顺；交割前两家仍独立运营。",
+   "why": "官方公告写明开源项目会继续开源，Code Storage 客户交割后仍可使用，功能将逐步并入 Codex；交割尚待监管批准。",
+   "source_name": "OpenAI 官网",
+   "url": "https://openai.com/index/openai-to-acquire-pierre",
+   "published": "11月4日（北京时间，官网发布日）",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "工具",
+    "智能体"
+   ]
+  },
+  {
+   "title": "Anthropic：用 Claude 帮忙解析细菌里首个 vault 颗粒的三维结构",
+   "plain": "Anthropic 生物学实验室发文：借助 Claude，找到并解析了原核细胞（细菌这类简单细胞）中首个 vault 颗粒的三维结构。Vault 是一种中空桶状大蛋白壳，1986 年在真核细胞里被发现，功能至今仍不清楚。和你的关系：这是“AI 当科研助手”的具体流程案例，不只是聊天写报告。",
+   "why": "官方研究页详述 Claude 参与文献检索、纯化流程优化和结构测绘；纯化时间从约三天缩短到约 90 分钟，同时也公开了 Claude 犯过的简单错误及他们如何纠正。预印本已投 bioRxiv。",
+   "source_name": "@AnthropicAI / Anthropic 官网",
+   "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
+   "published": "11月5日 04:11（北京时间）",
+   "credibility": "official",
+   "stars_rec": 2,
+   "tags": [
+    "研究",
+    "智能体"
+   ]
+  },
+  {
+   "title": "月之暗面开放 Kimi K3.1 Pro 权重：2.8T 总参数、104B 激活，支持百万 Token 上下文",
+   "plain": "Kimi（月之暗面）在 Hugging Face 放出了开源权重版 Kimi K3.1 Pro：总参数约 2.8 万亿、激活约 1040 亿，原生多模态，上下文号称 100 万 Token。官方博客写它在编程、三维创作、金融研究等智能体任务上更强。和你的关系：想本地或自建 API 跑国产大模型时，这是今天 HN 上很热的一手入口；真要跑满尺寸对显存要求极高，先看模型卡再决定。",
+   "why": "官方组织 moonshotai 的 Hugging Face 模型页与 kimi.ai 技术博客可互相核对；模型卡写明 image-text-to-text、许可证名 kimi-k3.1-pro。今日 Hacker News 相关帖热度靠前。",
+   "source_name": "Moonshot AI / Hugging Face",
+   "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+   "published": "11月2日–4日（北京时间，权重与博客窗口）",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "模型",
+    "智能体"
+   ]
+  }
+ ],
+ "repos": [
+  {
+   "repo": "KKKKhazix/agent-autoloop",
+   "category": "new",
+   "what": "让命令行 Agent 在后台自己接任务、卡住了才通知你拍板的轻量自动化中台",
+   "how": "先 `curl -fsSL https://raw.githubusercontent.com/KKKKhazix/agent-autoloop/main/install.sh | sh`，再按 README 接本机 Agent 和通知插件",
+   "difficulty": "一般",
+   "why": "11 月 3 日新建，增长快；和“AI 自动化不用一直盯着”直接相关，中文文档友好。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "智能体",
+    "自动化"
+   ],
+   "stars": 2718,
+   "updated": "2026-11-05",
+   "created": "2026-11-03",
+   "url": "https://github.com/KKKKhazix/agent-autoloop",
+   "stats_checked": "2026-11-05"
+  },
+  {
+   "repo": "storytold/craft-anything",
+   "category": "new",
+   "what": "开源项目：帮你搞懂任意软件怎么工作，并动手“复刻/改造”一份自己的版本",
+   "how": "打开仓库 README，选一个你熟悉的小工具场景，按文档用 AI 辅助拆解再自己改一版最小可运行示例",
+   "difficulty": "较难",
+   "why": "10 月 31 日创建后快速涨星，适合想把“会用 AI 写代码”练成“能讲清软件结构”的应届生作品集素材。",
+   "credibility": "first",
+   "stars_rec": 3,
+   "tags": [
+    "工具",
+    "自动化"
+   ],
+   "stars": 12469,
+   "updated": "2026-11-05",
+   "created": "2026-10-31",
+   "url": "https://github.com/storytold/craft-anything",
+   "stats_checked": "2026-11-05"
+  },
+  {
+   "repo": "github/spec-kit",
+   "category": "classic",
+   "what": "GitHub 官方开源的 Spec Kit：用规格说明书驱动，让编程 Agent 按步骤实现、修 bug、评估想法",
+   "how": "克隆仓库后按文档安装，在你的项目里生成/填写 spec，再交给 Claude Code、Codex 等 Agent 执行",
+   "difficulty": "一般",
+   "why": "长期高 Star、近几天仍有提交；把“先写清楚再让 AI 干”流程化，适合简历里展示工程化协作。",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "智能体",
+    "工具"
+   ],
+   "stars": 147408,
+   "updated": "2026-11-05",
+   "created": "2025-08-22",
+   "url": "https://github.com/github/spec-kit",
+   "stats_checked": "2026-11-05"
+  },
+  {
+   "repo": "max-sixty/worktrunk",
+   "category": "classic",
+   "what": "面向并行 AI Agent 的 Git worktree 管理 CLI，让多个 Agent 各改各的目录不撞车",
+   "how": "按 worktrunk.dev 文档安装后，在仓库里试 `wt switch -c -x claude 分支名`，给每个 Agent 单独工作区",
+   "difficulty": "一般",
+   "why": "高 Star 且今天仍在维护；官方定位就是“5–10 个 Agent 并行”时的 worktree 体验升级。",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "智能体",
+    "自动化",
+    "工具"
+   ],
+   "stars": 11126,
+   "updated": "2026-11-05",
+   "created": "2025-10-18",
+   "url": "https://github.com/max-sixty/worktrunk",
+   "stats_checked": "2026-11-05"
+  },
+  {
+   "repo": "The-PR-Agent/pr-agent",
+   "category": "goal",
+   "what": "开源的 AI 代码评审 Agent：自动给 Pull Request 写审查意见、总结改动",
+   "how": "按仓库文档用 GitHub App 或 CLI 接到自己的仓库，对一条测试 PR 跑一次 `/review` 看输出",
+   "difficulty": "一般",
+   "why": "和“AI 自动化提效开发流程”直接相关，可写进项目经历；注意它是社区维护的开源版，和商业 Qodo 产品不是同一套。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "自动化",
+    "智能体",
+    "求职"
+   ],
+   "stars": 14845,
+   "updated": "2026-11-05",
+   "created": "2023-07-06",
+   "url": "https://github.com/The-PR-Agent/pr-agent",
+   "stats_checked": "2026-11-05"
+  }
+ ],
+ "perks": [
+  {
+   "title": "硅基流动：完成实名认证可领 16 元通用代金券（可用来调 API）",
+   "plain": "硅基流动（SiliconFlow）是国内大模型 API 聚合平台，一个 Key 能调多家模型。官方“推荐官/认证专享礼”写明：用户完成实名认证后，可在活动中心领取 1 张 16 元全平台通用代金券，API 调用、批量推理、微调等都能用。和你的关系：做自动化小项目时，先用代金券试 DeepSeek、Qwen、GLM、Kimi 等，不用一上来就充值。",
+   "why": "信息来自硅基流动官网活动页；活动写明持续至 2026 年 12 月 31 日，代金券自获得日起 180 天有效，需在认证专享礼页面手动领取。重复认证不发新券。",
+   "who": "国内站用户（含机构），需完成实名认证后在活动中心领取；新用户注册并认证后可解锁权益",
+   "deadline": "推荐官计划写明持续至 2026年12月31日；单张代金券自获得之日起 180 天内有效",
+   "card": "官方未说明领券需要绑卡；调用付费模型前请自己在控制台核对余额与计费规则",
+   "auto_renew": "否（代金券，非订阅）",
+   "url": "https://siliconflow.cn/news/od7wj9rr23p95uhihmhrombp",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "福利",
+    "工具"
+   ]
+  }
+ ],
+ "note": "AIHOT 作参考源：线索含 Images 2.6、OpenAI cyber 流水线、收购 Pierre、Anthropic vault、Kimi K3.1 Pro、Cognition SWE-2 Flash、混元 Hy4 等；均已改写并核对一手链接。混元 Hy4 微信原文遇验证码未能打开，本期未收录。Cognition SWE-2 Flash 有官方博客但权重分享需申请，篇幅有限未进要闻。@xai 仍不引用。福利优先国内官方送额度：本期为硅基流动认证专享 16 元代金券。"
+}

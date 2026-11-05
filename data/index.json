@@ -1,6 +1,10 @@
 {
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "days": [
+  {
+   "date": "2026-11-05",
+   "headline": "OpenAI 发布 Images 2.6：出图大约快一半，支持做 GIF 动画，ChatGPT 和 Codex 全档位都能用；API 同步上线 Flare、Sunburst 两款图像模型。"
+  },
   {
    "date": "2026-11-04",
    "headline": "OpenAI 公布 ChatGPT 和 Codex 进军“实体工程”：已能帮工程师改 CAD 模型、出工程图、搭仿真，还用模型在一周内设计出一台能用的小硬件（但量产前仍要人工反复把关）。"
