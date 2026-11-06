@@ -1,6 +1,10 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "days": [
+  {
+   "date": "2026-11-06",
+   "headline": "OpenAI 发布 GPT-6 Cyber：专攻漏洞发现与修复的网络安全模型，对齐表现显著提升，先向部分 Daybreak Red 安全团队开放。"
+  },
   {
    "date": "2026-11-05",
    "headline": "OpenAI 发布 Images 2.6：出图大约快一半，支持做 GIF 动画，ChatGPT 和 Codex 全档位都能用；API 同步上线 Flare、Sunburst 两款图像模型。"

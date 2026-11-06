@@ -1,0 +1,237 @@
+{
+ "date": "2026-11-06",
+ "headline": {
+  "text": "OpenAI 发布 GPT-6 Cyber：专攻漏洞发现与修复的网络安全模型，对齐表现显著提升，先向部分 Daybreak Red 安全团队开放。",
+  "url": "https://openai.com/index/introducing-gpt-6-cyber",
+  "credibility": "official"
+ },
+ "try": {
+  "title": "在 Cursor 里用一句话搭出可分享的在线小工具：Build Live Apps",
+  "plain": "Cursor 刚上线 Build Live Apps：你对云端智能体说清楚要做什么应用，它会帮你搭网页、按需建 Postgres 数据库、用 Cursor 账号做登录，并部署成可分享的链接。和你的关系：做简历优化服务或内部自动化时，很多工具以前卡在“只能本机跑”；现在可以直接做成同事能点开的在线版，先小样本验证再扩展。",
+  "steps": [
+   "把 Cursor 更新到最新版，登录后启动一个云端智能体（Cloud Agent）",
+   "明确写一句：例如“帮我做一个内部小应用：上传简历 PDF，返回可读性与关键词检查清单，并部署成可分享链接”",
+   "按提示补全密钥或数据源（如需要），发布时选一个域名，拿到线上链接后先自己点一遍，再发给一位同事试用"
+  ],
+  "why": "官方 Changelog 写明可脚手架、数据库、SSO 与托管一站完成；和“AI 自动化要交付可用产品”直接相关，三步就能跑通最小闭环。",
+  "url": "https://cursor.com/changelog/build-live-apps",
+  "credibility": "official",
+  "stars_rec": 5,
+  "tags": [
+   "自动化",
+   "智能体",
+   "工具"
+  ]
+ },
+ "news": [
+  {
+   "title": "OpenAI 发布 GPT-6 Cyber：更会找漏洞，也更守授权范围",
+   "plain": "OpenAI 推出网络安全专用模型 GPT-6 Cyber：在 ExploitGym 等基准上比上一代明显更强，并强调训练后更少越权攻击无关服务；已用于 Linux、Firefox 等真实代码库的漏洞验证与补丁建议。和你的关系：自己跑命令行智能体时，权限、沙箱和“只做授权范围内的事”会越来越重要；普通开发者目前主要是了解能力边界，正式 API 先给审核通过的 Daybreak Red 客户。",
+   "why": "@OpenAI 与官网长文同步发布；系统卡写明 Critical 网络安全评级，以及 Daybreak Red 访问与 IP 白名单等防护。",
+   "source_name": "@OpenAI / OpenAI 官网",
+   "url": "https://openai.com/index/introducing-gpt-6-cyber",
+   "published": "11月6日 01:09（北京时间）",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "安全",
+    "模型",
+    "智能体"
+   ]
+  },
+  {
+   "title": "Google Gemini Omni 1.2 Flash：原生视频最长 15 秒，API 单价降约 30%",
+   "plain": "Google 更新视频生成模型 Gemini Omni 1.2 Flash：一次可生成或编辑最长 15 秒（此前约 10 秒），场景连贯和口型更好；开发者 API 相对 1.1 降价约 30%，720p 约每秒 0.07 美元。和你的关系：做产品演示、简历作品集短视频或教程片头时，可以用更长镜头、更低成本多试几版。",
+   "why": "@GoogleAI 长帖与 Google 官方博客互相核对；写明 Gemini API、Google Vids、Gemini App / Flow 等入口。",
+   "source_name": "@GoogleAI / Google 博客",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+   "published": "11月6日 01:08（北京时间）",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "模型",
+    "工具"
+   ]
+  },
+  {
+   "title": "Cursor 推出 Build Live Apps：描述需求即可构建、部署并分享在线应用",
+   "plain": "Cursor Changelog 宣布：在编辑器里启动云端智能体并明确说要“做一个应用”，即可自动搭网页、按需开 Postgres、用 Cursor SSO 做登录并托管上线，拿到可分享链接。和你的关系：把自动化脚本升级成同事能用的小工具，少踩“只在自己电脑上跑得通”的坑。",
+   "why": "官方 Changelog（2026-11-05）给出流程与权限控制说明；面向组织内协作场景。",
+   "source_name": "Cursor Changelog",
+   "url": "https://cursor.com/changelog/build-live-apps",
+   "published": "11月5日（北京时间，官方 Changelog 日期）",
+   "credibility": "official",
+   "stars_rec": 5,
+   "tags": [
+    "自动化",
+    "智能体",
+    "工具"
+   ]
+  },
+  {
+   "title": "Thinking Machines Lab 发布 Inkling 2 Small：594B 总参数 MoE，下周拟开源权重",
+   "plain": "Thinking Machines Lab（前 OpenAI 高管 Mira Murati 创办）发布第二代模型 Inkling 2 Small：混合专家（MoE）架构，总参数约 5940 亿、激活约 170 亿，支持看图与可变推理力度；官方称下周完成外部安全测试后拟以 Apache 2.0 开放权重，今天可在 Tinker Playground 试用。和你的关系：关注开源可用模型时多了一个新选项；落地前先看硬件门槛与许可证最终文本。",
+   "why": "官方新闻页写明参数规模、评测对比与开源时间表；可与页面原文核对。",
+   "source_name": "Thinking Machines Lab",
+   "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+   "published": "11月5日（北京时间）",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "模型",
+    "研究"
+   ]
+  },
+  {
+   "title": "腾讯发布混元 Hy4：自称跻身领先开源大模型之列，权重与系统卡将陆续放出",
+   "plain": "腾讯官网宣布新一代混元模型 Hy4：强调智能体与长程真实任务能力，并首次引入视觉理解；官方称相对 Hy4 Preview 在多项评测上有提升，权重和系统卡将在未来几天发布，并提到网络安全与生物安全方面的负责任开源。和你的关系：国内开源模型又多一条可跟进线索，适合稍后对照 Hugging Face / 官方文档做接口或本地试验。",
+   "why": "腾讯官网英文稿（2026-11-04）一手发布；权重尚未全部放出，本期只记官方公告事实。",
+   "source_name": "Tencent 官网",
+   "url": "https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+   "published": "11月4日（北京时间）",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "模型",
+    "智能体"
+   ]
+  }
+ ],
+ "repos": [
+  {
+   "repo": "ccch1mneyyy/dsh-Go",
+   "category": "new",
+   "what": "DeepSeek Harness 的 Android 客户端：手机本机跑 DSH，也能遥控电脑上的 DSH",
+   "how": "到 GitHub Releases 下载 arm64 APK 安装，首次启动选本机环境或连接远程主机，再配置模型与凭据",
+   "difficulty": "简单",
+   "why": "10 月 25 日创建，增长很快；和日常用的 DeepSeek Harness 生态直接相关，中文文档与风险说明齐全。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "智能体",
+    "自动化",
+    "工具"
+   ],
+   "stars": 11429,
+   "updated": "2026-11-06",
+   "created": "2026-10-25",
+   "url": "https://github.com/ccch1mneyyy/dsh-Go",
+   "stats_checked": "2026-11-06"
+  },
+  {
+   "repo": "microsoft/TokenEconomizer",
+   "category": "new",
+   "what": "给编程智能体做黑盒式费用与上下文控制的插件：少花 token、少带无关工具",
+   "how": "先 `git clone https://github.com/microsoft/TokenEconomizer.git`，再按 README 用 Claude Code / Codex / Copilot CLI 安装对应插件并跑 status 命令",
+   "difficulty": "一般",
+   "why": "微软研究院与安全团队开源，10 月中创建后仍在更新；做 AI 自动化时省额度、控成本很实用。",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "智能体",
+    "自动化",
+    "工具"
+   ],
+   "stars": 4841,
+   "updated": "2026-11-06",
+   "created": "2026-10-13",
+   "url": "https://github.com/microsoft/TokenEconomizer",
+   "stats_checked": "2026-11-06"
+  },
+  {
+   "repo": "browser-use/browser-use",
+   "category": "classic",
+   "what": "让 AI 智能体操控真实浏览器完成网页任务的开源 Python 库",
+   "how": "按官方文档用 pip 安装后，写几行代码指定模型和要完成的网页目标，先在本地小任务上试跑",
+   "difficulty": "一般",
+   "why": "高星且近一个月仍在维护；自动化填表、抓取公开信息、回归测试网页流程时常用。",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "自动化",
+    "智能体",
+    "工具"
+   ],
+   "stars": 120130,
+   "updated": "2026-11-06",
+   "created": "2024-11-01",
+   "url": "https://github.com/browser-use/browser-use",
+   "stats_checked": "2026-11-06"
+  },
+  {
+   "repo": "langgenius/dify",
+   "category": "classic",
+   "what": "可视化搭建智能体工作流、RAG 知识库与模型工具调用的开源平台",
+   "how": "可先用官方云版注册体验，或按文档 Docker 一键自建，导入几份业务文档做第一个问答助手",
+   "difficulty": "一般",
+   "why": "长期高星、近月仍活跃；把“知识库 + 智能体流程”做成可交付产品时很合适。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "知识库",
+    "智能体",
+    "自动化"
+   ],
+   "stars": 160483,
+   "updated": "2026-11-06",
+   "created": "2023-04-12",
+   "url": "https://github.com/langgenius/dify",
+   "stats_checked": "2026-11-06"
+  },
+  {
+   "repo": "career-ops-hq/career-ops",
+   "category": "goal",
+   "what": "开源 AI 求职智能体：扫职位、按你的画像打分、辅助改简历与投递流程",
+   "how": "装好 Node 后运行 `npx @santifer/career-ops init`，进入目录打开 Claude Code/Codex 等，按对话导入简历与目标岗位",
+   "difficulty": "一般",
+   "why": "专攻求职与简历场景，有完整简体中文文档；即将入职或持续看机会时都能当个人求职中台。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "求职",
+    "简历",
+    "智能体"
+   ],
+   "stars": 80464,
+   "updated": "2026-11-06",
+   "created": "2026-04-05",
+   "url": "https://github.com/career-ops-hq/career-ops",
+   "stats_checked": "2026-11-06"
+  }
+ ],
+ "perks": [
+  {
+   "title": "腾讯云 TokenHub 新人免费体验包：语言模型各约 100 万 Tokens",
+   "plain": "腾讯云大模型服务平台 TokenHub 给每个主账号一次免费体验额度：语言模型、多模态理解模型各提供约 100 万 Tokens，部分视觉/3D 模型另有积分包。和你的关系：测混元 Hy4 或其他平台模型、写自动化脚本调 API 时，可以先花免费额度跑通。",
+   "why": "腾讯云官方文档写明领取方式、额度与有效期；活动页标注本期截至 2026 年 12 月 31 日（后续以页面为准）。",
+   "who": "腾讯云主账号；需按控制台提示开通 TokenHub（通常需完成腾讯云实名）",
+   "deadline": "本期活动截至 2026-12-31；单份额度自领取起约 1 年有效（以文档与控制台为准）",
+   "card": "官方未说明必须绑卡；用尽免费额度后若未开启后付费会停止服务",
+   "auto_renew": "否（免费包一次领取；不会自动变成付费订阅）",
+   "url": "https://cloud.tencent.com/document/product/1823/130053",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "福利",
+    "模型"
+   ]
+  },
+  {
+   "title": "百度千帆新用户：实名后送 20 元全平台无门槛代金券",
+   "plain": "百度智能云文档写明：新用户注册百度千帆大模型服务及 Agent 开发平台，完成实名认证后赠送 20 元代金券，全平台无门槛使用，有效期一个月。和你的关系：想试用文心/千帆上的模型或 Agent 能力时，可用这 20 元先跑通 API。",
+   "why": "百度智能云官方产品文档“平台操作”段落原文可核对。",
+   "who": "百度千帆新注册用户，需完成实名认证",
+   "deadline": "代金券有效期一个月（自发放起；以到账展示为准）",
+   "card": "官方未说明领取代金券必须绑卡",
+   "auto_renew": "否",
+   "url": "https://cloud.baidu.com/doc/WENXINWORKSHOP/s/wlkg2d5xi",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "福利",
+    "模型"
+   ]
+  }
+ ],
+ "note": "X 官方账号已批量核对；窗口内 @OpenAI/@OpenAIDevs/@GoogleAI/@claudeai/@AIatMeta/@huggingface/@AnthropicAI/@AndrewYNg 有新帖，@deepseek_ai/@Alibaba_Qwen/@GoogleDeepMind/@karpathy 本窗口无明显新帖。OpenAI 官网对普通 curl 返回 403，GPT-6 Cyber 原文已用只读抓取核对。AIHOT 仅作线索，条目均改写并链到官方/一手页。智谱注册页含“新用户赠送”文案但强依赖前端脚本，未能稳定抓取额度细则，故本期未写入 perks。"
+}
