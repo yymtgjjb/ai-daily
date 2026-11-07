@@ -49,6 +49,45 @@ if date >= "2026-11-07":
     for where, x in items:
         if not str(x.get("for_you", "")).strip():
             errs.append(f"{where}: 缺少 for_you（对你有什么用）")
+# 从 2026-11-07 起必须有 ideas：正好 6 条（5 个 site + 1 个 x）。旧期没有不拦。
+ideas = d.get("ideas")
+if date >= "2026-11-07":
+    if not isinstance(ideas, list) or len(ideas) != 6:
+        errs.append("ideas 必须正好 6 条")
+        ideas = ideas if isinstance(ideas, list) else []
+    kinds = [x.get("source_kind") for x in ideas]
+    if ideas and (kinds.count("site") != 5 or kinds.count("x") != 1):
+        errs.append("ideas 应为 5 个 site + 1 个 x")
+    news_urls = {n.get("url") for n in news}
+    seen_idea_urls = set()
+    for i, x in enumerate(ideas):
+        where = f"ideas[{i}]"
+        need(x, ["title", "source_kind", "what", "pain", "run_with", "for_you", "why", "url", "source_name", "published", "credibility"], where)
+        url_ok(x.get("url"), where)
+        if x.get("source_kind") not in {"site", "x"}:
+            errs.append(f"{where}: source_kind 只能是 site 或 x")
+        how = x.get("how")
+        if not isinstance(how, list) or not (2 <= len(how) <= 4):
+            errs.append(f"{where}: how 必须是 2-4 步")
+        elif any(not str(step).strip() for step in how):
+            errs.append(f"{where}: how 不能有空步骤")
+        if x.get("credibility") not in CRED:
+            errs.append(f"{where}: credibility 只能是 official/first/media")
+        if "stars_rec" in x and x["stars_rec"] not in (1, 2, 3, 4, 5):
+            errs.append(f"{where}: stars_rec 必须是 1-5 的整数")
+        if "tags" in x and not isinstance(x["tags"], list):
+            errs.append(f"{where}: tags 必须是数组")
+        u = x.get("url")
+        if u in news_urls:
+            errs.append(f"{where} 与当天 news 链接重复 {u}")
+        if u in seen_idea_urls:
+            errs.append(f"{where} 与本期其他点子链接重复 {u}")
+        if u:
+            seen_idea_urls.add(u)
+elif ideas:
+    ideas = ideas if isinstance(ideas, list) else []
+else:
+    ideas = []
 # 与往期去重
 for f in glob.glob(os.path.join(ROOT, "*.json")):
     n = os.path.basename(f)
@@ -60,6 +99,10 @@ for f in glob.glob(os.path.join(ROOT, "*.json")):
     old_urls = {x["url"] for x in old.get("news", []) + old.get("perks", [])}
     for x in news + d.get("perks", []):
         if x["url"] in old_urls: errs.append(f"重复链接 {x['url']}（{old['date']} 出现过，除非有新进展请换掉）")
+    old_idea_urls = {x.get("url") for x in old.get("ideas", []) if x.get("url")}
+    for x in ideas:
+        if x.get("url") in old_idea_urls:
+            errs.append(f"重复点子链接 {x['url']}（{old['date']} 出现过）")
 if errs:
     print("校验失败:"); [print(" -", e) for e in errs]; sys.exit(1)
 print("校验通过", date)
