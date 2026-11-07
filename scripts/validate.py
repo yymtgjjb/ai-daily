@@ -44,6 +44,11 @@ for where, x in items:
         else:
             bad = [t for t in x["tags"] if t not in TAGS]
             if bad: errs.append(f"{where}: 未知标签 {bad}，可选 {sorted(TAGS)}")
+# 从 2026-11-07 起建议每条 try/news/repos/perks 都有 for_you；旧期没有也能通过；空数组段落跳过
+if date >= "2026-11-07":
+    for where, x in items:
+        if not str(x.get("for_you", "")).strip():
+            errs.append(f"{where}: 缺少 for_you（对你有什么用）")
 # 与往期去重
 for f in glob.glob(os.path.join(ROOT, "*.json")):
     n = os.path.basename(f)

@@ -66,8 +66,11 @@ dl.kv dt{color:var(--ink3)}dl.kv dd{margin:0;color:var(--ink)}
 .card h3{font-size:20px;font-weight:800;color:var(--ink);line-height:1.45;margin:4px 0 10px;letter-spacing:-.005em}
 .plain,ol.steps{font-size:16px;font-weight:400;color:var(--ink3);line-height:1.7}
 .plain b{color:var(--ink2);font-weight:600}
+.field-label{color:var(--ink);font-weight:700}
+.term{color:var(--ink2);font-weight:600}
 .why{font-size:14px;line-height:1.65;color:var(--ink3);opacity:.85;margin:10px 0 4px}
-.why b{color:var(--ink3);font-weight:600}
+.why b,.why .field-label{color:var(--ink);font-weight:700;opacity:1}
+.why .term{color:var(--ink2);font-weight:600;opacity:1}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;background:var(--sunk);border:1px solid var(--line);color:var(--ink);padding:1px 6px;border-radius:6px;word-break:break-all}
 .row .tabs{flex:1}.tab{white-space:nowrap}
 /* 折叠 / 展开 */

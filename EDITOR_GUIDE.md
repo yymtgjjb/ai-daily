@@ -31,11 +31,21 @@
   - 同一 owner/repo 历史只推一次（validate.py 会拦）。不推破解、越狱、盗版、ROM 类仓库。
 - AI 福利：国内官方送 token 和免费额度的活动优先，每期尽量至少 1 条国内的（查不到就不凑）。只放官方正规的免费额度、学生/新用户优惠、限时试用、比赛黑客松奖励、开源计划。每条写清官方链接、谁能领（地区/学生/邮箱）、截止时间、是否绑卡、是否自动续费；查不到写「官方未说明」。禁止共享账号、破解、中转站/低价 API、多开套利、先交钱带赚钱。没有就 `perks: []`（显示「今日无新福利」）。只找信息，不注册、不填资料、不付款。福利已推荐过的同一链接不重复，除非有新变化（那就换标题写明变化）。
 
+## 读者画像（写每一条前先对一下）
+- 学生，AI 还不熟；目前主要只用 **Grok Bot** 和大肥鱼（**dsh** / DeepSeek Harness）——都是在对话框里写东西、改代码，不是自己部署服务器。
+- 目标：学 AI + 赚钱（简历优化服务、AI 自动化接单）。
+- 他关心高星推荐，但现成「大白话」仍可能有门槛：看完仍不知道「这玩意儿能为我做什么」。
+- 因此每条要闻 / 值得试 / 项目 / 福利，除了讲清楚是什么，还要多写一块「对你有什么用」。
+
 ## 写法（给小白，简体中文）
-- 每条 `plain` 开头一句白话：这是什么、和我有什么关系（读者是即将入职的应届生，做简历优化服务和 AI 自动化）。
-- 少用术语，必须用时括号解释。每条都有 `why`（推荐理由）、链接、可信度。
+- 每条 `plain`（要闻/值得试/福利）或 `what`（项目）开头一句白话：这是什么。
+- **`for_you`（对你有什么用）必写公式**：先打一个读者能懂的比方 → 再对比他现在用的 Grok Bot / dsh → 最后明确「现在就能试」还是「先懂概念、先别自己装」，以及跟学习 AI、赚钱的关系。try / news / repos / perks 每条都要有（从 2026-11-07 起；旧期没有也可以，页面会隐藏这一块）。
+- 少用术语；必须用时：在 JSON 文本里写成 `**术语**（解释）`，只加粗术语本身，不要整段加粗。前端会把 `**…**` 渲染成中等粗的术语样式。英文先写中文再跟原文，例如「**自托管**（把软件装在你自己的电脑或服务器上跑，不像打开 Grok Bot 就能用）」「仓库说明里的**快速开始**（Quick start）」。禁止留下未解释的行话（如 README Quick start、Slack/Teams、回路、自托管、Diff、MoE 等）。
+- 小标题（「这是什么」「我怎么用」「对你有什么用」「推荐理由」）要比术语更显眼；术语用中等粗，不要压过小标题。
+- 每条都有 `why`（推荐理由）、链接、可信度。
 - 可信度：`official` 官方（公司官方账号/博客/官方仓库）；`first` 一手（项目作者本人的仓库或帖子、论文原文）；`media` 媒体（新闻报道、HN 讨论）。
 - 时间一律写北京时间，如「10月31日 07:08（北京时间）」。X/API 时间是 UTC，要 +8 小时。
+- 数据里不要加 emoji（页面栏目标题已自带图标）。
 
 ## 推荐指数与方向标签（v2 起每天都要填；字段可选，旧期没有也兼容）
 - `stars_rec`：1–5 的整数，填在 try / news / repos / perks 每条上。5=和读者（简历优化、求职、AI 自动化）直接相关且今天就能用；4=很相关；3=值得了解；2=背景信息；1=一般。不要人人 5 星。
@@ -46,22 +56,24 @@
 ## JSON 结构（`data/YYYY-MM-DD.json`）
 ```json
 {
-  "date": "2026-11-01",
+  "date": "2026-11-07",
   "headline": {"text": "一句话", "url": "https://…", "credibility": "official"},
-  "try": {"title": "…", "plain": "这是什么+和我的关系", "steps": ["第1步","第2步","第3步"],
+  "try": {"title": "…", "plain": "这是什么", "for_you": "比方→对比 Grok Bot/dsh→现在试还是先懂→和学/赚的关系",
+          "steps": ["第1步","第2步","第3步"],
           "why": "推荐理由", "url": "https://…", "credibility": "first", "stars_rec": 5, "tags": ["简历","求职"]},
-  "news": [{"title": "…", "plain": "…", "why": "…", "source_name": "@claudeai",
+  "news": [{"title": "…", "plain": "…", "for_you": "…", "why": "…", "source_name": "@claudeai",
             "url": "https://…", "published": "10月31日 01:29（北京时间）", "credibility": "official", "stars_rec": 4, "tags": ["模型"]}],
   "repos": [{"repo": "owner/name", "category": "new|classic|goal", "what": "一句话这是什么",
-             "how": "一句话我怎么用（具体到第一步）", "difficulty": "简单|一般|较难", "why": "推荐理由",
+             "how": "一句话我怎么用（具体到第一步）", "for_you": "…", "difficulty": "简单|一般|较难", "why": "推荐理由",
              "credibility": "first", "stars_rec": 5, "tags": ["自动化"], "stars": 0, "updated": "YYYY-MM-DD", "created": "YYYY-MM-DD",
              "url": "https://github.com/owner/name", "stats_checked": "YYYY-MM-DD"}],
-  "perks": [{"title": "…", "plain": "…", "why": "…", "who": "谁能领", "deadline": "截止时间",
+  "perks": [{"title": "…", "plain": "…", "for_you": "…", "why": "…", "who": "谁能领", "deadline": "截止时间",
              "card": "是否绑卡", "auto_renew": "是否自动续费", "url": "官方链接", "credibility": "official", "stars_rec": 3, "tags": ["福利"]}],
   "note": "可选：本期说明，如哪些来源读不到、哪个账号无法核实"
 }
 ```
 `stars/updated/created/url/stats_checked` 由 `scripts/repo_stats.py` 自动填，不要手写。
+从 `2026-11-07` 起，`try` / `news[]` / `repos[]` / `perks[]` 每条都应有非空 `for_you`（某段是空数组则跳过）。旧期没有 `for_you` 时页面隐藏这一块，校验也不拦。
 
 `data/index.json`（由 validate.py 生成，勿手改）：`{"updated": "YYYY-MM-DD", "days": [{"date": "…", "headline": "…"}]}`，按日期倒序。
 
