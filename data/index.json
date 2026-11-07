@@ -1,6 +1,10 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "days": [
+  {
+   "date": "2026-11-07",
+   "headline": "Anthropic 拆解智能体记忆：会话内写笔记、标出重要事件，再用“dreaming”（空闲时离线整理）纠错并备好下次要用的上下文。"
+  },
   {
    "date": "2026-11-06",
    "headline": "OpenAI 发布 GPT-6 Cyber：专攻漏洞发现与修复的网络安全模型，对齐表现显著提升，先向部分 Daybreak Red 安全团队开放。"

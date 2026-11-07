@@ -1,0 +1,238 @@
+{
+ "date": "2026-11-07",
+ "headline": {
+  "text": "Anthropic 拆解智能体记忆：会话内写笔记、标出重要事件，再用“dreaming”（空闲时离线整理）纠错并备好下次要用的上下文。",
+  "url": "https://www.anthropic.com/research/components-of-agent-memory",
+  "credibility": "official"
+ },
+ "try": {
+  "title": "在 Cursor 里用语音和智能体实时通话",
+  "plain": "Cursor 新上线 Voice Chat：你可以边说边改需求，问智能体进度，并听它用短句回报进展。和你的关系：做简历优化小工具或自动化脚本时，双手在敲别的东西也能口头指挥智能体，少盯着屏幕打字。",
+  "steps": [
+   "把 Cursor 更新到最新版；打开智能体窗口或 IDE，等输入框空闲时点波形按钮「Start voice chat」（和听写麦克风是两回事）",
+   "口头说清要改什么，例如“把简历关键词检查改成支持拖拽上传 PDF，跑通后再告诉我结果”；也可问它正在改哪一块",
+   "听完短进度更新后，自己点开 Diff 或跑一遍确认；不用时挂断。iOS 还可说 “Hey Siri, call Cursor” 开新通话"
+  ],
+  "why": "官方 Changelog（11月6日）写明支持 Agents 窗口、IDE、Web 与 iOS，底层是 Grok Voice；开启 Privacy Mode 时语音走零保留。三步就能上手，和日常跟智能体协作直接相关。",
+  "url": "https://cursor.com/changelog/voice-chat",
+  "credibility": "official",
+  "stars_rec": 5,
+  "tags": [
+   "智能体",
+   "自动化",
+   "工具"
+  ]
+ },
+ "news": [
+  {
+   "title": "交活前先让智能体自己测试，并附上效果截图",
+   "plain": "宝玉（@dotey）把以前管员工交活的办法用到了 AI 智能体上：他从前要求员工提交 PR（把代码合并进主分支的申请）时必须带上功能截图，因为要去截图就得先自己测一遍。现在同样要求 Agent：任务完成后必须自己先验证，再生成效果截图给你看。很多时候它在截图这一步就会发现问题，并能顺手修好。和你的关系：你用智能体做自动化或改代码时，加上“自测 + 截图再交活”，能少收到看起来做完了、其实没跑通的半成品。",
+   "why": "作者本人发帖，方法具体，能马上用在日常和智能体协作里；和 AI 自动化交付直接相关。",
+   "source_name": "宝玉 @dotey",
+   "url": "https://x.com/dotey/status/2118569598379229219",
+   "published": "11月6日 13:02（北京时间）",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "智能体",
+    "自动化",
+    "工具"
+   ]
+  },
+  {
+   "title": "学 GPT 生图：先读官方指南，再让模型帮你提炼模板",
+   "plain": "Lemomo（@lemomo_ai）建议：想把 GPT 生图用熟练，先去读 OpenAI 官方的 Image prompting（图像提示词）指南 https://developers.openai.com/api/docs/guides/image-prompting ，然后开一个新对话，把这个链接发给 Claude 或 GPT，让它总结核心要点，再按你常用的风格改成几套可复用模板。和你的关系：做作品集配图、产品演示图或说明配图时，有几套自己的模板，会比每次从零写提示词更稳。",
+   "why": "作者把“先读官方文档、再让模型提炼成自己的模板”说得很清楚，并给出了官方指南入口。",
+   "source_name": "Lemomo @lemomo_ai",
+   "url": "https://x.com/lemomo_ai/status/2118606812815778265",
+   "published": "11月6日 15:30（北京时间）",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "工具",
+    "模型"
+   ]
+  },
+  {
+   "title": "Anthropic：智能体记忆靠笔记、显著性判断和 dreaming",
+   "plain": "Anthropic 工程博客拆解 Claude 的智能体记忆：会话中可写记忆笔记、给重要事件打显著性标记；空闲时用 dreaming（类似“睡眠整理”）回放日志、纠正错误笔记，并准备下次会话要预加载的内容。和你的关系：自己做带记忆的自动化或知识库智能体时，可借鉴“当场记要点 + 事后整理纠错”两段式，而不是把整段聊天原文一股脑塞回去。",
+   "why": "@AnthropicAI 与官网长文同步；给出笔记、显著性、dreaming 与评测思路，和智能体/知识库直接相关。",
+   "source_name": "@AnthropicAI / Anthropic 官网",
+   "url": "https://www.anthropic.com/research/components-of-agent-memory",
+   "published": "11月7日 05:16（北京时间）",
+   "credibility": "official",
+   "stars_rec": 5,
+   "tags": [
+    "智能体",
+    "知识库",
+    "研究"
+   ]
+  },
+  {
+   "title": "Cursor 推出与智能体的实时语音聊天",
+   "plain": "Cursor Changelog 宣布 Voice Chat：可对智能体语音下达修改、询问进度，并听它播报简短进展；支持 Agents 窗口、IDE、Web 与 Cursor iOS，还可检索历史消息与通话、在多个 worker 间切换。和你的关系：双手忙碌时也能口头推进自动化或改代码任务，少被打字打断思路。",
+   "why": "官方 Changelog（2026-11-06）写明入口、平台范围与 Grok Voice 底层；可与页面原文核对。",
+   "source_name": "Cursor Changelog",
+   "url": "https://cursor.com/changelog/voice-chat",
+   "published": "11月6日（北京时间，官方 Changelog 日期）",
+   "credibility": "official",
+   "stars_rec": 5,
+   "tags": [
+    "智能体",
+    "自动化",
+    "工具"
+   ]
+  },
+  {
+   "title": "百度开放 ERNIE-5.5-Flash-Base：280B 总参数、每 token 激活 14B",
+   "plain": "百度文心发布 ERNIE-5.5-Flash-Base：稀疏 MoE（混合专家）语言模型，总参数约 2800 亿、每 token 激活约 140 亿，预训练终点权重（未经中训与后训）在 Hugging Face 以 FP8/BF16 放出；训练最长上下文 128K，微调与推理可到 1M。和你的关系：若要在自家数据上继续微调或做领域 Agent，多了一个可复用的开源 Base 起点；落地前先看显存与许可证。",
+   "why": "百度文心官方发布页写明参数规模、训练阶段与 HF 权重地址，可一手核对。",
+   "source_name": "百度文心 ERNIE 官方",
+   "url": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-base/",
+   "published": "11月5日（北京时间，官方产品动态日期）",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "模型",
+    "研究"
+   ]
+  }
+ ],
+ "repos": [
+  {
+   "repo": "amosblomqvist/learnharness",
+   "category": "new",
+   "what": "用智能体按你的理解起点规划并授课的学习 harness（驾驭层），带持久知识图谱",
+   "how": "打开 https://learnharness.ai 或仓库说明，选一个你要补的知识点，先答几道摸底题，再按它给出的分步课练下去",
+   "difficulty": "一般",
+   "why": "近 30 天新仓且增长快；把“测—教—练”做成可跨会话的知识图谱，对应求职补短板与知识库沉淀。",
+   "credibility": "first",
+   "stars_rec": 4,
+   "tags": [
+    "智能体",
+    "知识库",
+    "求职"
+   ],
+   "stars": 5745,
+   "updated": "2026-11-04",
+   "created": "2026-10-17",
+   "url": "https://github.com/amosblomqvist/learnharness",
+   "stats_checked": "2026-11-07"
+  },
+  {
+   "repo": "Leonxlnx/earshot",
+   "category": "new",
+   "what": "给编码智能体装“耳朵”：本地 CPU 上把音效/成片听成可推理的描述与评分，还能用代码生成与拟合声音",
+   "how": "克隆仓库后按 README 安装 CLI，对一段音频跑 `earshot describe your.ogg`，把输出贴回给 Cursor/Claude 让它据此改片或改音效",
+   "difficulty": "一般",
+   "why": "近 30 天新仓；补上智能体做演示片、产品视频时“听不见”的短板，和自动化交付演示相关。",
+   "credibility": "first",
+   "stars_rec": 3,
+   "tags": [
+    "智能体",
+    "自动化",
+    "工具"
+   ],
+   "stars": 4076,
+   "updated": "2026-11-07",
+   "created": "2026-10-15",
+   "url": "https://github.com/Leonxlnx/earshot",
+   "stats_checked": "2026-11-07"
+  },
+  {
+   "repo": "pydantic/pydantic-ai",
+   "category": "classic",
+   "what": "Python 侧类型完备的 AI/Agent SDK：换模型像换字符串，带 harness、评测与多界面接入",
+   "how": "`pip install pydantic-ai`，按文档写一个带工具的 Agent，先跑通 `agent.run(\"...\")` 再接到你的自动化脚本",
+   "difficulty": "一般",
+   "why": "长期高星、近几日仍在推；做简历服务或内部 Agent 时，类型与评测工具链比裸调 API 更稳。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "智能体",
+    "自动化",
+    "工具"
+   ],
+   "stars": 21063,
+   "updated": "2026-11-07",
+   "created": "2024-06-21",
+   "url": "https://github.com/pydantic/pydantic-ai",
+   "stats_checked": "2026-11-07"
+  },
+  {
+   "repo": "openai/openai-agents-python",
+   "category": "classic",
+   "what": "OpenAI 官方轻量多智能体工作流 SDK：Agent、交接、工具、护栏与追踪一应俱全",
+   "how": "`pip install openai-agents`，照官方 quickstart 建两个会 handoff（交接）的 Agent，先在本机跑通一个小任务再加工具",
+   "difficulty": "一般",
+   "why": "官方框架、持续维护；适合把简历优化流程拆成“解析 / 改写 / 质检”多个智能体协作。",
+   "credibility": "official",
+   "stars_rec": 5,
+   "tags": [
+    "智能体",
+    "自动化"
+   ],
+   "stars": 30534,
+   "updated": "2026-11-07",
+   "created": "2025-03-11",
+   "url": "https://github.com/openai/openai-agents-python",
+   "stats_checked": "2026-11-07"
+  },
+  {
+   "repo": "CopilotKit/OpenDuet",
+   "category": "goal",
+   "what": "开源主动式智能体模板：自带电脑环境，可在 Web/手机/Slack/Teams 里帮你干活并保持你在回路里",
+   "how": "按 README Quick start 自托管，接上自己的模型与 CopilotKit Intelligence（线程与记忆），先让它完成一条你日常会做的检查清单任务",
+   "difficulty": "较难",
+   "why": "贴合“AI 自动化 + 人在回路”；可改造成内部助理，处理简历批次检查或例行运营，而不是只会聊天。",
+   "credibility": "first",
+   "stars_rec": 5,
+   "tags": [
+    "智能体",
+    "自动化",
+    "求职"
+   ],
+   "stars": 1974,
+   "updated": "2026-11-05",
+   "created": "2026-10-22",
+   "url": "https://github.com/CopilotKit/OpenDuet",
+   "stats_checked": "2026-11-07"
+  }
+ ],
+ "perks": [
+  {
+   "title": "智谱开放平台：GLM-4.7-Flash / GLM-4.6V-Flash 等官方标价免费",
+   "plain": "智谱官方 API 定价页写明：文本模型 GLM-4.7-Flash（约 200K 上下文）输入/输出/缓存命中均为免费；视觉模型 GLM-4.6V-Flash 同样免费。和你的关系：搭简历检查、知识库问答或小自动化原型时，可先用免费 Flash 跑通流程，再决定要不要上付费旗舰。",
+   "why": "一手来自 docs.bigmodel.cn 官方定价表，不是第三方转述；免费模型长期可调用，适合省额度试错。",
+   "who": "已注册智谱开放平台账号的开发者（国内平台，需按官网完成注册；是否强制实名以控制台为准）",
+   "deadline": "官方定价页当前标注为免费；如后续调价以页面最新为准",
+   "card": "调用免费模型本身不要求绑卡；开通账号/实名是否绑卡以官网流程为准（官方未在本页强制要求）",
+   "auto_renew": "否（按量计费；免费模型不产生调用费）",
+   "url": "https://docs.bigmodel.cn/cn/guide/start/pricing",
+   "credibility": "official",
+   "stars_rec": 4,
+   "tags": [
+    "福利",
+    "模型",
+    "工具"
+   ]
+  },
+  {
+   "title": "阶跃星辰：适用限时免费的语音模型限免到 11 月 8 日晚",
+   "plain": "阶跃星辰官方定价页写明：适用限时免费政策的语音模型，限免至北京时间 2026 年 11 月 8 日 23:59:59；自 11 月 9 日 00:00 起 StepAudio 3 系列按新价计费。和你的关系：若要做语音助理、听写或演示配音，今天到明天晚间是最后窗口，先用 API 小样本试效果。",
+   "why": "官方定价文档直接给出限免截止与新价生效时间，时效性强。",
+   "who": "阶跃星辰开放平台注册用户（具体哪些型号仍在限免，以控制台/文档实时展示为准）",
+   "deadline": "北京时间 2026-11-08 23:59:59",
+   "card": "官方未在本页说明是否必须绑卡",
+   "auto_renew": "否（限免结束后按量计费；不会因限免自动订阅）",
+   "url": "https://platform.stepfun.com/docs/zh/guides/pricing/details",
+   "credibility": "official",
+   "stars_rec": 3,
+   "tags": [
+    "福利",
+    "模型"
+   ]
+  }
+ ],
+ "note": "AIHOT 仅作线索；本期已核对 Anthropic / Cursor / 百度文心 / 智谱 / 阶跃官方页。@xai 按手册暂不引用。OpenRouter Auto Router、Meta Muse 专用模型、Amp spaces、OpenAI BioBasicsBench 等有官方出处但篇幅有限未收录。DeepSeek 平台页本次 curl 返回 403，未核到新福利。"
+}
