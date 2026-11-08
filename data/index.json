@@ -1,6 +1,10 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "days": [
+  {
+   "date": "2026-11-08",
+   "headline": "Karpathy 用 **Claude Code**（Anthropic 出品的编程助手，主要在对话框里改代码）大约 3 分钟做出 TristanTube：把一份公开的 YouTube 频道分级清单，变成可以刷的约 4.7 万个硬核学习视频站点，并带电视模式。"
+  },
   {
    "date": "2026-11-07",
    "headline": "Anthropic 拆解智能体记忆：会话内写笔记、标出重要事件，再用“dreaming”（空闲时离线整理）纠错并备好下次要用的上下文。"
