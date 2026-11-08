@@ -42,8 +42,9 @@
 - 因此每条要闻 / 值得试 / 点子库 / 项目 / 福利，除了讲清楚是什么，还要多写一块「对你有什么用」。
 
 ## 写法（给小白，简体中文）
-- 每条 `plain`（要闻/值得试/福利）或 `what`（项目）开头一句白话：这是什么。
-- **`for_you`（对你有什么用）必写公式**：先打一个读者能懂的比方 → 再对比他现在用的 Grok Bot / dsh → 最后明确「现在就能试」还是「先懂概念、先别自己装」，以及跟学习 AI、赚钱的关系。try / news / repos / perks / ideas 每条都要有（从 2026-11-07 起；旧期没有也可以，页面会隐藏这一块）。
+- 每条 `plain`（要闻/值得试/福利）或 `what`（项目）按「专业版加小白注释、主次分明」来写：先给关键结论和专业要点，再用括号或一句短注补上白话解释，次要细节放后面；不要只写一句泛泛的「这是什么」。
+- **`for_you`（对你有什么用）必写公式**：先打一个读者能懂的比方 → 再对比他现在用的 Grok Bot / dsh → 明确和 Grok Bot、大肥鱼（dsh）、知识库这些现有工具怎么接上（打开谁、从哪一步开始、跑完能看到什么），最后说清「现在就能试」还是「先懂概念、先别自己装」，以及跟学习 AI、赚钱的关系。try / news / repos / perks / ideas 每条都要有（从 2026-11-07 起；旧期没有也可以，页面会隐藏这一块）。
+- **`framework`（可借鉴的思维）可选字段**：写清从这个项目或这条信息里、在这个点上到底要得到什么（可复用的判断、方法或动作），以后遇到同类事怎么套用。`headline` 不要这个字段；try / news / repos / perks / ideas 有，旧期可以没有；页面空值自动隐藏。
 - 点子库每条还必须写清四块：`what`（这是做什么的）、`pain`（解决什么痛点）、`how`（2–4 步具体怎么做）、`run_with`（结合 Grok Bot 和现有助手可以怎么跑通：打开谁、怎么说、跑完能看到什么）。
 - 少用术语；必须用时：在 JSON 文本里写成 `**术语**（解释）`，只加粗术语本身，不要整段加粗。前端会把 `**…**` 渲染成中等粗的术语样式。英文先写中文再跟原文，例如「**自托管**（把软件装在你自己的电脑或服务器上跑，不像打开 Grok Bot 就能用）」「仓库说明里的**快速开始**（Quick start）」。禁止留下未解释的行话（如 README Quick start、Slack/Teams、回路、自托管、Diff、MoE 等）。
 - 小标题（「这是什么」「我怎么用」「对你有什么用」「推荐理由」，以及点子库的「这是做什么的」「解决什么痛点」「具体可以怎么做」「结合 Grok Bot 和现有助手可以怎么跑通」）要比术语更显眼；术语用中等粗，不要压过小标题。
@@ -64,28 +65,31 @@
   "date": "2026-11-07",
   "headline": {"text": "一句话", "url": "https://…", "credibility": "official"},
   "try": {"title": "…", "plain": "这是什么", "for_you": "比方→对比 Grok Bot/dsh→现在试还是先懂→和学/赚的关系",
+          "framework": "这件事上要得到什么、以后同类事怎么套用",
           "steps": ["第1步","第2步","第3步"],
           "why": "推荐理由", "url": "https://…", "credibility": "first", "stars_rec": 5, "tags": ["简历","求职"]},
-  "news": [{"title": "…", "plain": "…", "for_you": "…", "why": "…", "source_name": "@claudeai",
+  "news": [{"title": "…", "plain": "…", "for_you": "…", "framework": "…", "why": "…", "source_name": "@claudeai",
             "url": "https://…", "published": "10月31日 01:29（北京时间）", "credibility": "official", "stars_rec": 4, "tags": ["模型"]}],
   "repos": [{"repo": "owner/name", "category": "new|classic|goal", "what": "一句话这是什么",
-             "how": "一句话我怎么用（具体到第一步）", "for_you": "…", "difficulty": "简单|一般|较难", "why": "推荐理由",
+             "how": "一句话我怎么用（具体到第一步）", "for_you": "…", "framework": "…", "difficulty": "简单|一般|较难", "why": "推荐理由",
              "credibility": "first", "stars_rec": 5, "tags": ["自动化"], "stars": 0, "updated": "YYYY-MM-DD", "created": "YYYY-MM-DD",
              "url": "https://github.com/owner/name", "stats_checked": "YYYY-MM-DD"}],
   "ideas": [{"title": "…", "source_kind": "site", "what": "这是做什么的", "pain": "解决什么痛点",
              "how": ["第1步", "第2步", "第3步"],
              "run_with": "打开谁、怎么说、跑完能看到什么",
              "for_you": "比方→对比 Grok Bot/dsh→现在试还是先懂→和学/赚的关系",
+             "framework": "…",
              "why": "推荐理由", "url": "https://…", "source_name": "Agent Use Cases",
              "published": "11月7日（北京时间）", "credibility": "first", "stars_rec": 5,
              "tags": ["智能体","知识库"]}],
-  "perks": [{"title": "…", "plain": "…", "for_you": "…", "why": "…", "who": "谁能领", "deadline": "截止时间",
+  "perks": [{"title": "…", "plain": "…", "for_you": "…", "framework": "…", "why": "…", "who": "谁能领", "deadline": "截止时间",
              "card": "是否绑卡", "auto_renew": "是否自动续费", "url": "官方链接", "credibility": "official", "stars_rec": 3, "tags": ["福利"]}],
   "note": "可选：本期说明，如哪些来源读不到、哪个账号无法核实"
 }
 ```
 `stars/updated/created/url/stats_checked` 由 `scripts/repo_stats.py` 自动填，不要手写。
 从 `2026-11-07` 起，`try` / `news[]` / `repos[]` / `perks[]` / `ideas[]` 每条都应有非空 `for_you`（某段是空数组则跳过）。旧期没有 `for_you` 时页面隐藏这一块，校验也不拦。
+从 `2026-11-09` 起，`try` / `news[]` / `repos[]` / `perks[]` / `ideas[]` 每条都必填非空 `framework`（某段是空数组则跳过）；旧期没有也能通过，页面空值隐藏。
 从 `2026-11-07` 起，`ideas` 必有且正好 6 条：恰好 5 个 `source_kind` 为 `site`、1 个为 `x`。`source_kind` 为 `x` 的那张卡片加角标「X 上最火」。旧期没有 `ideas` 时页面隐藏整栏，校验也不拦。点子库的 `tags` 除了下面的标准方向标签，也可以加简短说明性标签（例如「现在就能试」）。
 
 `data/index.json`（由 validate.py 生成，勿手改）：`{"updated": "YYYY-MM-DD", "days": [{"date": "…", "headline": "…"}]}`，按日期倒序。

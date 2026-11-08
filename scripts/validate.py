@@ -49,6 +49,11 @@ if date >= "2026-11-07":
     for where, x in items:
         if not str(x.get("for_you", "")).strip():
             errs.append(f"{where}: 缺少 for_you（对你有什么用）")
+# 从 2026-11-09 起 try/news/repos/perks 每条必填非空 framework；旧期没有也能通过；空数组段落跳过
+if date >= "2026-11-09":
+    for where, x in items:
+        if not str(x.get("framework", "")).strip():
+            errs.append(f"{where}: 缺少 framework（可借鉴的思维）")
 # 从 2026-11-07 起必须有 ideas：正好 6 条（5 个 site + 1 个 x）。旧期没有不拦。
 ideas = d.get("ideas")
 if date >= "2026-11-07":
@@ -73,6 +78,8 @@ if date >= "2026-11-07":
             errs.append(f"{where}: how 不能有空步骤")
         if x.get("credibility") not in CRED:
             errs.append(f"{where}: credibility 只能是 official/first/media")
+        if date >= "2026-11-09" and not str(x.get("framework", "")).strip():
+            errs.append(f"{where}: 缺少 framework（可借鉴的思维）")
         if "stars_rec" in x and x["stars_rec"] not in (1, 2, 3, 4, 5):
             errs.append(f"{where}: stars_rec 必须是 1-5 的整数")
         if "tags" in x and not isinstance(x["tags"], list):
