@@ -35,8 +35,8 @@ function askBtn(x,section){
  return '<button type="button" class="ask" data-ask="'+encodeURIComponent(askPrompt(x,section))+'">'+esc(label)+'</button>';
 }
 var DIGEST={};
-function itemDigestLines(x,i){
- var lines=['','--- 第 '+(i+1)+' 条 ---'];
+function itemDigestLines(x){
+ var lines=[];
  var title=x&&(x.title||x.repo||x.text)||'';
  var what=x&&(x.plain||x.what||x.text)||'';
  if(title)lines.push('标题：'+title);
@@ -60,17 +60,16 @@ function itemDigestLines(x,i){
  if(x&&x.source_name)lines.push('来源：'+x.source_name);
  return lines;
 }
-function digestPrompt(date,section,items){
+function digestPrompt(date,section,x){
  var name=ASK_SEC[section]||section||'';
- var list=(items||[]).filter(Boolean);
- var lines=['请用「分区淡彩看板」消化技能，带着我消化下面这一板块的每日 AI 快报。先读完全文，做成一页可视化思维看板：蓝段讲它是什么、对我有什么用；绿段讲原理和为什么成立；黄段讲能不能用、具体怎么做、有什么坑。不要编造原文没有的步骤、数字或提示词；专业术语第一次出现用大白话解释。做完把看板发给我，聊天里只写两三句要点。','','日期：'+(date||''),'板块：'+name,'共 '+list.length+' 条'];
- list.forEach(function(x,i){lines=lines.concat(itemDigestLines(x,i));});
+ var lines=['请用「分区淡彩看板」消化技能，带着我消化下面这一条每日 AI 快报。先读完全文，做成一页可视化思维看板：蓝段讲它是什么、对我有什么用；绿段讲原理和为什么成立；黄段讲能不能用、具体怎么做、有什么坑。不要编造原文没有的步骤、数字或提示词；专业术语第一次出现用大白话解释。做完把看板发给我，聊天里只写两三句要点。','','日期：'+(date||'')];
+ if(name)lines.push('板块：'+name);
+ lines=lines.concat(itemDigestLines(x));
  return lines.join('\n');
 }
-function digestBtn(id,date,section,items){
- var list=(items||[]).filter(Boolean);
- if(!list.length)return '';
- DIGEST[id]=digestPrompt(date,section,list);
+function digestBtn(id,date,section,x){
+ if(!x)return '';
+ DIGEST[id]=digestPrompt(date,section,x);
  return '<button type="button" class="digest" data-digest-id="'+esc(id)+'">【消化】</button>';
 }
 var FILTER='all',SORT=false,DATA=null,MINE=['简历','求职','智能体','自动化','知识库'];
@@ -94,12 +93,12 @@ function noneMsg(def){return FILTER==='all'?def:'这个方向今天没有内容'
 function renderDay(d){
  DATA=d;DIGEST={};var h='';var hl=d.headline||{};
  h+='<div class="card hero"><div class="tags">'+(hl.credibility?badge(hl.credibility):'')+'<span class="tag">今日一句话</span></div><p class="lead">🌟 '+esc(hl.text||'今日无重大更新')+'</p>'+
-   '<div class="actions">'+(hl.url?linkBtn(hl.url,'来源'):'')+askBtn(hl,'headline')+digestBtn('headline',d.date,'headline',hl&&(hl.text||hl.url)?[hl]:[])+'</div>'+'</div>';
+   '<div class="actions">'+(hl.url?linkBtn(hl.url,'来源'):'')+askBtn(hl,'headline')+digestBtn('headline',d.date,'headline',hl&&(hl.text||hl.url)?hl:null)+'</div>'+'</div>';
  var t=d.try&&match(d.try)?d.try:null;
  h+=sec('01','🧪','今天最值得试',t?item('try',badge(t.credibility)+stars(t.stars_rec),t.title,t.plain,
    field('这是什么',t.plain)+forYou(t)+framework(t)+'<ol class="steps">'+(t.steps||[]).map(function(s){return '<li>'+rich(s)+'</li>';}).join('')+'</ol>'+
    '<p class="why"><span class="field-label">推荐理由：</span>'+rich(t.why)+'</p><div class="tags">'+tags(t)+'</div>'+
-   '<div class="actions">'+linkBtn(t.url,'打开')+askBtn(t,'try')+favBtn(d.date+'#try',t.title,t.url,d.date)+'</div>'):empty(noneMsg('今日无重大更新')),t?1:0,'try',digestBtn('try',d.date,'try',t?[t]:[]));
+   '<div class="actions">'+linkBtn(t.url,'打开')+askBtn(t,'try')+digestBtn('try',d.date,'try',t)+favBtn(d.date+'#try',t.title,t.url,d.date)+'</div>'):empty(noneMsg('今日无重大更新')),t?1:0,'try');
  var hasIdeas=(d.ideas||[]).length;
  var ideaList=prep(d.ideas||[]);
  var nPerks=hasIdeas?'05':'04';
@@ -107,12 +106,12 @@ function renderDay(d){
  h+=sec('02','📰','今日 AI 要闻',news.length?news.map(function(n){return item('news'+n._i,badge(n.credibility)+stars(n.stars_rec),n.title,n.plain,
    field('这是什么',n.plain)+forYou(n)+framework(n)+'<p class="why"><span class="field-label">推荐理由：</span>'+rich(n.why)+'</p>'+
    '<div class="meta"><span>'+esc(n.source_name)+'</span>'+(n.published?'<span class="date">'+esc(n.published)+'</span>':'')+'</div><div class="tags" style="margin-top:8px">'+tags(n)+'</div>'+
-   '<div class="actions">'+linkBtn(n.url)+askBtn(n,'news')+favBtn(d.date+'#news'+n._i,n.title,n.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无重大更新')),news.length,'news',digestBtn('news',d.date,'news',news));
+   '<div class="actions">'+linkBtn(n.url)+askBtn(n,'news')+digestBtn('news'+n._i,d.date,'news',n)+favBtn(d.date+'#news'+n._i,n.title,n.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无重大更新')),news.length,'news');
  var repos=prep(d.repos);
  h+=sec('03','🛠️','GitHub 项目',repos.length?repos.map(function(r){return item('repo'+r._i,'<span class="badge b-cat">'+esc(CAT[r.category]||r.category)+'</span>'+stars(r.stars_rec),r.repo,r.what,
    field('这是什么',r.what)+field('我怎么用',r.how)+forYou(r)+framework(r)+'<p class="why"><span class="field-label">推荐理由：</span>'+rich(r.why)+'</p>'+
    '<dl class="kv"><dt>Star 数</dt><dd><span class="bignum">'+fmtNum(r.stars)+'</span>（'+esc(r.stats_checked)+' 查询）</dd><dt>上手难度</dt><dd>'+esc(r.difficulty)+'</dd><dt>创建时间</dt><dd>'+esc(r.created||'—')+'</dd><dt>最近更新</dt><dd>'+esc(r.updated)+'</dd><dt>来源</dt><dd>'+badge(r.credibility||'first')+'</dd></dl>'+
-   '<div class="tags" style="margin-top:8px">'+tags(r)+'</div><div class="actions">'+linkBtn(r.url,'打开 GitHub')+askBtn(r,'repos')+favBtn('repo:'+r.repo,r.repo,r.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无重大更新')),repos.length,'repos',digestBtn('repos',d.date,'repos',repos));
+   '<div class="tags" style="margin-top:8px">'+tags(r)+'</div><div class="actions">'+linkBtn(r.url,'打开 GitHub')+askBtn(r,'repos')+digestBtn('repo'+r._i,d.date,'repos',r)+favBtn('repo:'+r.repo,r.repo,r.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无重大更新')),repos.length,'repos');
  if(hasIdeas){
   h+=sec('04','💡','AI 运用点子库',ideaList.length?ideaList.map(function(x){return item('idea'+x._i,badge(x.credibility)+stars(x.stars_rec)+(x.source_kind==='x'?'<span class="badge b-xhot">X 上最火</span>':''),x.title,x.what,
     field('这是做什么的',x.what)+field('解决什么痛点',x.pain)+
@@ -120,12 +119,12 @@ function renderDay(d){
     field('结合 Grok Bot 和现有助手可以怎么跑通',x.run_with)+forYou(x)+framework(x)+
     '<p class="why"><span class="field-label">推荐理由：</span>'+rich(x.why)+'</p>'+
     '<div class="meta"><span>'+esc(x.source_name)+'</span>'+(x.published?'<span class="date">'+esc(x.published)+'</span>':'')+'</div><div class="tags" style="margin-top:8px">'+tags(x)+'</div>'+
-    '<div class="actions">'+linkBtn(x.url)+askBtn(x,'ideas')+favBtn(d.date+'#idea'+x._i,x.title,x.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无可用点子')),ideaList.length,'ideas',digestBtn('ideas',d.date,'ideas',ideaList));
+    '<div class="actions">'+linkBtn(x.url)+askBtn(x,'ideas')+digestBtn('idea'+x._i,d.date,'ideas',x)+favBtn(d.date+'#idea'+x._i,x.title,x.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无可用点子')),ideaList.length,'ideas');
  }
  var perks=prep(d.perks);
  h+=sec(nPerks,'🎁','AI 福利',perks.length?perks.map(function(p){return item('perk'+p._i,badge(p.credibility)+stars(p.stars_rec),p.title,p.plain,
    field('这是什么',p.plain)+forYou(p)+framework(p)+'<dl class="kv"><dt>谁能领</dt><dd>'+esc(p.who)+'</dd><dt>截止</dt><dd>'+esc(p.deadline)+'</dd><dt>绑卡</dt><dd>'+esc(p.card)+'</dd><dt>自动续费</dt><dd>'+esc(p.auto_renew)+'</dd></dl>'+
-   '<p class="why"><span class="field-label">推荐理由：</span>'+rich(p.why)+'</p><div class="actions">'+linkBtn(p.url,'官方链接')+askBtn(p,'perks')+favBtn(d.date+'#perk'+p._i,p.title,p.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无新福利')),perks.length,'perks',digestBtn('perks',d.date,'perks',perks));
+   '<p class="why"><span class="field-label">推荐理由：</span>'+rich(p.why)+'</p><div class="actions">'+linkBtn(p.url,'官方链接')+askBtn(p,'perks')+digestBtn('perk'+p._i,d.date,'perks',p)+favBtn(d.date+'#perk'+p._i,p.title,p.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无新福利')),perks.length,'perks');
  if(d.note)h+='<p class="note">ℹ️ '+esc(d.note)+'</p>';
  app.innerHTML=h;
  syncAll();
