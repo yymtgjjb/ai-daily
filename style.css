@@ -16,7 +16,7 @@ a{color:var(--accent)}
 .sub{margin:0 0 12px;font-size:14px;color:var(--ink3)}
 .row{display:flex;gap:8px;align-items:center;margin-bottom:10px}
 .tabs{display:flex;gap:6px;background:var(--sunk);padding:4px;border-radius:14px}
-.tab,.nav-btn,select,.fav,.ask,.link-btn,.chip,.more,.sort{min-height:44px;font:inherit;font-size:15px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:0 14px;cursor:pointer}
+.tab,.nav-btn,select,.fav,.ask,.digest,.link-btn,.chip,.more,.sort{min-height:44px;font:inherit;font-size:15px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:0 14px;cursor:pointer}
 .tabs .tab{flex:1;border:0;background:transparent;color:var(--ink3)}
 .tabs .tab[aria-pressed=true]{background:var(--card);color:var(--accent);font-weight:700;box-shadow:0 1px 2px #0000001a}
 .datebar select{flex:1;min-width:0}.nav-btn:disabled{opacity:.4;cursor:default}
@@ -82,6 +82,8 @@ details>summary::-webkit-details-marker{display:none}
 details.sec>summary.sec-h{display:flex;align-items:center;gap:10px;min-height:48px;margin:0}
 details.sec>summary .cnt{margin-left:auto}
 details.sec>summary .arrow{width:36px}
+details.sec>summary .digest{flex:none;min-height:36px;padding:0 12px;font-size:14px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-color:transparent}
+.hero .digest,.actions .digest{font-weight:700;color:var(--accent);background:var(--accent-soft);border-color:transparent}
 summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:12px}
 details.item{padding:0}
 details.item>summary{display:flex;align-items:flex-start;gap:4px;padding:16px 10px 14px 18px;min-height:44px}
