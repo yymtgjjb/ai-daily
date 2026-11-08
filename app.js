@@ -13,6 +13,19 @@ function badge(c){var b=CRED[c]||CRED.media;return '<span class="badge '+b[1]+'"
 function favBtn(key,title,url,date){var on=!!favs()[key];
  return '<button class="fav" data-key="'+esc(key)+'" data-title="'+esc(title)+'" data-url="'+esc(url)+'" data-date="'+esc(date)+'" aria-pressed="'+on+'">'+(on?'★ 已收藏':'☆ 收藏')+'</button>';}
 function linkBtn(url,label){return '<a class="link-btn" href="'+esc(safeUrl(url))+'" target="_blank" rel="noopener">'+esc(label||'看原文')+' ↗</a>';}
+function askPrompt(x){
+ var title=x&& (x.title||x.repo)||'';
+ var summary=x&& (x.plain||x.what||x.text)||'';
+ var url=x&&x.url||'';
+ var forYou=x&&x.for_you||'';
+ var lines=['请帮我讲懂这一条 AI 日报内容。','','标题：'+title];
+ if(url)lines.push('链接：'+url);
+ if(summary)lines.push('这是什么：'+summary);
+ if(forYou)lines.push('对我有什么用：'+forYou);
+ lines.push('','我是机电专业应届生，主要用 Grok Bot 和大肥鱼（dsh），想学习 AI 和赚钱（简历优化、做内容、自动化）。请用大白话讲清楚：这到底是什么、跟我现在用的工具有什么关系、我现在就能试什么还是先懂概念。');
+ return lines.join('\n');
+}
+function askBtn(x){return '<button type="button" class="ask" data-ask="'+encodeURIComponent(askPrompt(x))+'">发给 AI 询问</button>';}
 var FILTER='all',SORT=false,DATA=null,MINE=['简历','求职','智能体','自动化','知识库'];
 function sec(n,icon,title,body,cnt,key){return '<details class="sec" open data-sec="'+key+'"><summary class="sec-h"><span class="num">'+n+'</span><h2>'+icon+' '+esc(title)+'</h2><span class="cnt num">'+(cnt!=null?cnt+' 条':'')+'</span><span class="arrow" aria-hidden="true"></span></summary>'+body+'</details>';}
 var OPEN={};
@@ -33,12 +46,12 @@ function noneMsg(def){return FILTER==='all'?def:'这个方向今天没有内容'
 function renderDay(d){
  DATA=d;var h='';var hl=d.headline||{};
  h+='<div class="card hero"><div class="tags">'+(hl.credibility?badge(hl.credibility):'')+'<span class="tag">今日一句话</span></div><p class="lead">🌟 '+esc(hl.text||'今日无重大更新')+'</p>'+
-   (hl.url?'<div class="actions">'+linkBtn(hl.url,'来源')+'</div>':'')+'</div>';
+   '<div class="actions">'+(hl.url?linkBtn(hl.url,'来源'):'')+askBtn(hl)+'</div>'+'</div>';
  var t=d.try&&match(d.try)?d.try:null;
  h+=sec('01','🧪','今天最值得试',t?item('try',badge(t.credibility)+stars(t.stars_rec),t.title,t.plain,
    field('这是什么',t.plain)+forYou(t)+'<ol class="steps">'+(t.steps||[]).map(function(s){return '<li>'+rich(s)+'</li>';}).join('')+'</ol>'+
    '<p class="why"><span class="field-label">推荐理由：</span>'+rich(t.why)+'</p><div class="tags">'+tags(t)+'</div>'+
-   '<div class="actions">'+linkBtn(t.url,'打开')+favBtn(d.date+'#try',t.title,t.url,d.date)+'</div>'):empty(noneMsg('今日无重大更新')),t?1:0,'try');
+   '<div class="actions">'+linkBtn(t.url,'打开')+askBtn(t)+favBtn(d.date+'#try',t.title,t.url,d.date)+'</div>'):empty(noneMsg('今日无重大更新')),t?1:0,'try');
  var hasIdeas=(d.ideas||[]).length;
  var ideaList=prep(d.ideas||[]);
  var nPerks=hasIdeas?'05':'04';
@@ -46,12 +59,12 @@ function renderDay(d){
  h+=sec('02','📰','今日 AI 要闻',news.length?news.map(function(n){return item('news'+n._i,badge(n.credibility)+stars(n.stars_rec),n.title,n.plain,
    field('这是什么',n.plain)+forYou(n)+'<p class="why"><span class="field-label">推荐理由：</span>'+rich(n.why)+'</p>'+
    '<div class="meta"><span>'+esc(n.source_name)+'</span>'+(n.published?'<span class="date">'+esc(n.published)+'</span>':'')+'</div><div class="tags" style="margin-top:8px">'+tags(n)+'</div>'+
-   '<div class="actions">'+linkBtn(n.url)+favBtn(d.date+'#news'+n._i,n.title,n.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无重大更新')),news.length,'news');
+   '<div class="actions">'+linkBtn(n.url)+askBtn(n)+favBtn(d.date+'#news'+n._i,n.title,n.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无重大更新')),news.length,'news');
  var repos=prep(d.repos);
  h+=sec('03','🛠️','GitHub 项目',repos.length?repos.map(function(r){return item('repo'+r._i,'<span class="badge b-cat">'+esc(CAT[r.category]||r.category)+'</span>'+stars(r.stars_rec),r.repo,r.what,
    field('这是什么',r.what)+field('我怎么用',r.how)+forYou(r)+'<p class="why"><span class="field-label">推荐理由：</span>'+rich(r.why)+'</p>'+
    '<dl class="kv"><dt>Star 数</dt><dd><span class="bignum">'+fmtNum(r.stars)+'</span>（'+esc(r.stats_checked)+' 查询）</dd><dt>上手难度</dt><dd>'+esc(r.difficulty)+'</dd><dt>创建时间</dt><dd>'+esc(r.created||'—')+'</dd><dt>最近更新</dt><dd>'+esc(r.updated)+'</dd><dt>来源</dt><dd>'+badge(r.credibility||'first')+'</dd></dl>'+
-   '<div class="tags" style="margin-top:8px">'+tags(r)+'</div><div class="actions">'+linkBtn(r.url,'打开 GitHub')+favBtn('repo:'+r.repo,r.repo,r.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无重大更新')),repos.length,'repos');
+   '<div class="tags" style="margin-top:8px">'+tags(r)+'</div><div class="actions">'+linkBtn(r.url,'打开 GitHub')+askBtn(r)+favBtn('repo:'+r.repo,r.repo,r.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无重大更新')),repos.length,'repos');
  if(hasIdeas){
   h+=sec('04','💡','AI 运用点子库',ideaList.length?ideaList.map(function(x){return item('idea'+x._i,badge(x.credibility)+stars(x.stars_rec)+(x.source_kind==='x'?'<span class="badge b-xhot">X 上最火</span>':''),x.title,x.what,
     field('这是做什么的',x.what)+field('解决什么痛点',x.pain)+
@@ -59,12 +72,12 @@ function renderDay(d){
     field('结合 Grok Bot 和现有助手可以怎么跑通',x.run_with)+forYou(x)+
     '<p class="why"><span class="field-label">推荐理由：</span>'+rich(x.why)+'</p>'+
     '<div class="meta"><span>'+esc(x.source_name)+'</span>'+(x.published?'<span class="date">'+esc(x.published)+'</span>':'')+'</div><div class="tags" style="margin-top:8px">'+tags(x)+'</div>'+
-    '<div class="actions">'+linkBtn(x.url)+favBtn(d.date+'#idea'+x._i,x.title,x.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无可用点子')),ideaList.length,'ideas');
+    '<div class="actions">'+linkBtn(x.url)+askBtn(x)+favBtn(d.date+'#idea'+x._i,x.title,x.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无可用点子')),ideaList.length,'ideas');
  }
  var perks=prep(d.perks);
  h+=sec(nPerks,'🎁','AI 福利',perks.length?perks.map(function(p){return item('perk'+p._i,badge(p.credibility)+stars(p.stars_rec),p.title,p.plain,
    field('这是什么',p.plain)+forYou(p)+'<dl class="kv"><dt>谁能领</dt><dd>'+esc(p.who)+'</dd><dt>截止</dt><dd>'+esc(p.deadline)+'</dd><dt>绑卡</dt><dd>'+esc(p.card)+'</dd><dt>自动续费</dt><dd>'+esc(p.auto_renew)+'</dd></dl>'+
-   '<p class="why"><span class="field-label">推荐理由：</span>'+rich(p.why)+'</p><div class="actions">'+linkBtn(p.url,'官方链接')+favBtn(d.date+'#perk'+p._i,p.title,p.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无新福利')),perks.length,'perks');
+   '<p class="why"><span class="field-label">推荐理由：</span>'+rich(p.why)+'</p><div class="actions">'+linkBtn(p.url,'官方链接')+askBtn(p)+favBtn(d.date+'#perk'+p._i,p.title,p.url,d.date)+'</div>');}).join(''):empty(noneMsg('今日无新福利')),perks.length,'perks');
  if(d.note)h+='<p class="note">ℹ️ '+esc(d.note)+'</p>';
  app.innerHTML=h;
  syncAll();
@@ -78,7 +91,7 @@ function renderArchive(){
 function renderFavs(){
  var f=favs(),keys=Object.keys(f).sort(function(a,b){return (f[b].t||0)-(f[a].t||0);});
  app.innerHTML='<section><div class="sec-h"><h2>⭐ 我的收藏</h2></div><p class="muted">只保存在这台设备的浏览器里，换设备或清缓存会丢失。</p>'+(keys.length?keys.map(function(k){var x=f[k];
-  return '<div class="card"><h3>'+esc(x.title)+'</h3><div class="meta"><span>收藏自 '+esc(x.date)+'</span></div><div class="actions">'+linkBtn(x.url)+favBtn(k,x.title,x.url,x.date)+'</div></div>';}).join(''):empty('还没有收藏，点卡片上的「☆ 收藏」即可'))+'</section>';
+  return '<div class="card"><h3>'+esc(x.title)+'</h3><div class="meta"><span>收藏自 '+esc(x.date)+'</span></div><div class="actions">'+linkBtn(x.url)+askBtn(x)+favBtn(k,x.title,x.url,x.date)+'</div></div>';}).join(''):empty('还没有收藏，点卡片上的「☆ 收藏」即可'))+'</section>';
 }
 function setView(v){
  Array.prototype.forEach.call(document.querySelectorAll('.tab'),function(b){b.setAttribute('aria-pressed',String(b.dataset.view===v));});
@@ -106,6 +119,12 @@ document.addEventListener('click',function(e){
  else if(t.classList.contains('fav')){var f=favs(),k=t.dataset.key;
   if(f[k])delete f[k];else f[k]={title:t.dataset.title,url:t.dataset.url,date:t.dataset.date,t:Date.now()};
   saveFavs(f);var on=!!f[k];t.setAttribute('aria-pressed',String(on));t.textContent=on?'★ 已收藏':'☆ 收藏';}
+ else if(t.classList.contains('ask')){
+  var text='';try{text=decodeURIComponent(t.dataset.ask||'');}catch(err){text=t.dataset.ask||'';}
+  function painted(ok){var old=t.getAttribute('data-label')||t.textContent;if(!t.getAttribute('data-label'))t.setAttribute('data-label',old);t.textContent=ok?'已复制提问':'复制失败，请重试';clearTimeout(t._askTimer);t._askTimer=setTimeout(function(){t.textContent=t.getAttribute('data-label');},1600);}
+  function fallback(){var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;left:-9999px';document.body.appendChild(ta);ta.select();var ok=false;try{ok=document.execCommand('copy');}catch(err){}document.body.removeChild(ta);painted(ok);}
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(function(){painted(true);}).catch(fallback);
+  else fallback();}
  else if(t.matches('a[data-date]')){e.preventDefault();setView('day');loadDay(t.dataset.date);}
 });
 prev.onclick=function(){var i=INDEX.findIndex(function(e){return e.date===CUR;});if(i<INDEX.length-1)loadDay(INDEX[i+1].date);};
