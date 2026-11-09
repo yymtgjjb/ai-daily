@@ -1,6 +1,10 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "days": [
+  {
+   "date": "2026-11-09",
+   "headline": "周末官方更新很少：OpenAI 开发者团队说明，符合条件的 ChatGPT Pro 和 Business 订阅用户可以在账单设置里领 **API 额度**（给程序调用模型用的预付金额），用来覆盖自己做的小应用的调用费，并在预告“明天”有新动作。"
+  },
   {
    "date": "2026-11-08",
    "headline": "Karpathy 用 **Claude Code**（Anthropic 出品的编程助手，主要在对话框里改代码）大约 3 分钟做出 TristanTube：把一份公开的 YouTube 频道分级清单，变成可以刷的约 4.7 万个硬核学习视频站点，并带电视模式。"
